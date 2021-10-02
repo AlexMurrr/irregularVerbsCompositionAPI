@@ -1,6 +1,6 @@
 let translatedVerbs = {
 
-    be:'быть, являтся',
+    be:'быть, являться',
     beat:'бить, колотить',
     become:'становиться',
     begin:'начинать',
@@ -63,9 +63,9 @@ function removeDiv(){
     divCardCenter.remove();
 }
 
-let translate;
-let sPast;
-let sParticiple;
+let translate = document.getElementById('translate');
+let sPast = document.getElementById('sPast');
+let sParticiple = document.getElementById('sParticiple');
 
 const htmlTrueTranslate = '<div class ="adjacent"> Перевод глагола верный </div>';
 const htmlFalseTranslate = `<div class ="adjacent"> <span class ="textRed">Перевод глагола неверный!</span> <span class="textGreen">Надо:  ${translatedVerbs[verb].toUpperCase()} </span></div>`;
@@ -77,8 +77,8 @@ const htmlTruePastParticiple = '<div class ="adjacent"> Форма верна </
 const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">Форма глагола неверная!</span> <span class="textGreen">Надо:  ${pastParticiple[verb].toUpperCase()} </span></div>`;
 
 function getInputTranslate(){
-    translate = document.getElementById('translate').value;
-    if(translate === translatedVerbs[verb]) {
+    tr = translate.value;
+    if(tr === translatedVerbs[verb]) {
          document.getElementById('translateLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlTrueTranslate);
     }else {
@@ -88,8 +88,8 @@ function getInputTranslate(){
 }
 
 function getInputPastSimple(){
-    sPast = document.getElementById('sPast').value;
-    if(sPast === pastSimple[verb]) {
+    sP = sPast.value;
+    if(sP === pastSimple[verb]) {
          document.getElementById('sPastLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('sPastLi').insertAdjacentHTML('afterend', htmlTruePastSimple);
     }else {
@@ -99,8 +99,8 @@ function getInputPastSimple(){
 }
 
 function getInputPastParticiple(){
-    sParticiple = document.getElementById('sParticiple').value;
-    if(sParticiple === pastParticiple[verb]) {
+    sP = sParticiple.value;
+    if(sP === pastParticiple[verb]) {
          document.getElementById('sParticipleLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('sParticipleLi').insertAdjacentHTML('afterend', htmlTruePastParticiple);
     }else {
@@ -116,9 +116,19 @@ function getInput(){
     getInputPastParticiple();
 }
 
+function reload(){
+    translate.value = "";
+    sPast.value = "";
+    sParticiple.value = "";
+    location.reload();
+}
+
 let btnShowResulte = document.getElementById('btn');
+let btnStart = document.getElementById('btn1');
 
 btnShowResulte.addEventListener('click', getInput);
+btnStart.addEventListener('click', reload);
+
 
 
 
