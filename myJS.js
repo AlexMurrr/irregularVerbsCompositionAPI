@@ -66,6 +66,7 @@ function removeDiv(){
 let translate = document.getElementById('translate');
 let sPast = document.getElementById('sPast');
 let sParticiple = document.getElementById('sParticiple');
+let div = document.getElementById('div');
 
 const htmlTrueTranslate = '<div class ="adjacent"> Перевод глагола верный </div>';
 const htmlFalseTranslate = `<div class ="adjacent"> <span class ="textRed">Перевод глагола неверный!</span> <span class="textGreen">Надо:  ${translatedVerbs[verb].toUpperCase()} </span></div>`;
@@ -109,25 +110,46 @@ function getInputPastParticiple(){
     }
 }
 
+//function createButton(cssClass, parent){
+//    const btn = document.createElement('button');
+//    btn.classList.add(cssClass);
+//    parent.appendChild(btn);
+//}
+function createButton(cssClass, textCont){
+const btn = document.createElement('button');
+btn.classList.add(cssClass);
+btn.textContent = textCont;
+
+    return btn;
+}
+
+const btnStart = createButton('btn', 'start');
+
 
 function getInput(){
+
     getInputTranslate();
     getInputPastSimple();
     getInputPastParticiple();
+    document.getElementById('btn').remove();
+    div.appendChild(btnStart);
 }
 
 function reload(){
     translate.value = "";
     sPast.value = "";
     sParticiple.value = "";
+    btnStart.remove();
     location.reload();
+
 }
 
 let btnShowResulte = document.getElementById('btn');
-let btnStart = document.getElementById('btn1');
 
 btnShowResulte.addEventListener('click', getInput);
 btnStart.addEventListener('click', reload);
+
+
 
 
 
