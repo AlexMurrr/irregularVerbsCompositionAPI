@@ -77,9 +77,13 @@ const htmlFalsePastSimple = `<div class ="adjacent"> <span class ="textRed">Фо
 const htmlTruePastParticiple = '<div class ="adjacent"> Форма верна </div>';
 const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">Форма глагола неверная!</span> <span class="textGreen">Надо:  ${pastParticiple[verb].toUpperCase()} </span></div>`;
 
+tr = translate.value;
+sP = sPast.value;
+sP = sParticiple.value;
+
 function getInputTranslate(){
-    tr = translate.value;
-    if(tr === translatedVerbs[verb]) {
+
+     if(tr === translatedVerbs[verb]) {
          document.getElementById('translateLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlTrueTranslate);
     }else {
@@ -89,7 +93,7 @@ function getInputTranslate(){
 }
 
 function getInputPastSimple(){
-    sP = sPast.value;
+
     if(sP === pastSimple[verb]) {
          document.getElementById('sPastLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('sPastLi').insertAdjacentHTML('afterend', htmlTruePastSimple);
@@ -100,7 +104,7 @@ function getInputPastSimple(){
 }
 
 function getInputPastParticiple(){
-    sP = sParticiple.value;
+
     if(sP === pastParticiple[verb]) {
          document.getElementById('sParticipleLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('sParticipleLi').insertAdjacentHTML('afterend', htmlTruePastParticiple);
@@ -110,11 +114,6 @@ function getInputPastParticiple(){
     }
 }
 
-//function createButton(cssClass, parent){
-//    const btn = document.createElement('button');
-//    btn.classList.add(cssClass);
-//    parent.appendChild(btn);
-//}
 function createButton(cssClass, textCont){
 const btn = document.createElement('button');
 btn.classList.add(cssClass);
