@@ -80,7 +80,7 @@ const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">
 tr = translate.value;
 sP = sPast.value;
 sP = sParticiple.value;
-
+//
 function getInputTranslate(){
 
      if(tr === translatedVerbs[verb]) {
