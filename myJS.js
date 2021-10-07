@@ -17,7 +17,7 @@ let translatedVerbs = {
 
 let pastSimple = {
 
-    be:'was,were',
+    be:'was, were',
     beat:'beat',
     become:'became',
     begin:'began',
@@ -49,7 +49,6 @@ let pastParticiple = {
     catch:'caught',
 }
 
-const arInputName = ['Переревод','Simple Past','Simple Participle'];
 
 //get random verb
 let verb = Object.keys(translatedVerbs)[Math.floor(Math.random() * Object.keys(translatedVerbs).length)];
@@ -77,12 +76,9 @@ const htmlFalsePastSimple = `<div class ="adjacent"> <span class ="textRed">Фо
 const htmlTruePastParticiple = '<div class ="adjacent"> Форма верна </div>';
 const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">Форма глагола неверная!</span> <span class="textGreen">Надо:  ${pastParticiple[verb].toUpperCase()} </span></div>`;
 
-//tr = translate.value;
-//sP = sPast.value;
-//sP = sParticiple.value;
-//
+
 function getInputTranslate(){
-      let tr = translate.value;
+      let tr = translate.value.toLowerCase();
      if(tr === translatedVerbs[verb]) {
          document.getElementById('translateLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlTrueTranslate);
@@ -93,7 +89,7 @@ function getInputTranslate(){
 }
 
 function getInputPastSimple(){
-    let sP = sPast.value;
+    let sP = sPast.value.toLowerCase();
     if(sP === pastSimple[verb]) {
          document.getElementById('sPastLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('sPastLi').insertAdjacentHTML('afterend', htmlTruePastSimple);
@@ -104,7 +100,7 @@ function getInputPastSimple(){
 }
 
 function getInputPastParticiple(){
-    sP = sParticiple.value;
+    sP = sParticiple.value.toLowerCase();
     if(sP === pastParticiple[verb]) {
          document.getElementById('sParticipleLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('sParticipleLi').insertAdjacentHTML('afterend', htmlTruePastParticiple);
@@ -140,14 +136,26 @@ function reload(){
     sParticiple.value = "";
     btnStart.remove();
     location.reload();
-
 }
+
 
 let btnShowResulte = document.getElementById('btn');
 
 btnShowResulte.addEventListener('click', getInput);
 btnStart.addEventListener('click', reload);
 
+
+document.addEventListener('keydown', function(event) {
+  if (event.code === "Enter" && !(document.getElementById('btn'))) {
+    reload();
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.code === "Enter") {
+    getInput();
+  }
+});
 
 
 
