@@ -79,15 +79,25 @@ const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">
 
 function getInputTranslate(){
       let tr = translate.value.toLowerCase();
-     if(tr === translatedVerbs[verb]) {
+    if(translatedVerbs[verb].split(', ').length>=1){
+     if(checkVerb(translatedVerbs[verb], tr)) {
          document.getElementById('translateLi').insertAdjacentHTML('beforeend', '+1');
         document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlTrueTranslate);
     }else {
         document.getElementById('translateLi').insertAdjacentHTML('beforeend', '<span class="textRed">-1</span>');
         document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlFalseTranslate);
     }
-}
+  }else{
+      if(tr === translatedVerbs[verb]) {
+         document.getElementById('translateLi').insertAdjacentHTML('beforeend', '+1');
+        document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlTrueTranslate);
+    }else {
+        document.getElementById('translateLi').insertAdjacentHTML('beforeend', '<span class="textRed">-1</span>');
+        document.getElementById('translateLi').insertAdjacentHTML('afterend', htmlFalseTranslate);
+    }
 
+  }
+}
 function getInputPastSimple(){
     let sP = sPast.value.toLowerCase();
     if(sP === pastSimple[verb]) {
@@ -120,6 +130,14 @@ btn.textContent = textCont;
 
 const btnStart = createButton('btn', 'start');
 
+function checkVerb(string, input){
+    arrStr = string.split(", ");
+    for (let i =0; i<=arrStr.length; i++){
+        if (arrStr[i] === input)
+        return true;
+    }
+        return false;
+}
 
 function getInput(){
 
