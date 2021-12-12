@@ -55,11 +55,11 @@ const verb = Object.keys(translatedVerbs)[Math.floor(Math.random() * Object.keys
 const title = document.getElementById('title');
 title.textContent = `Введите для глагола:  ${verb.toUpperCase()}`;
 
-const divCardCenter = document.getElementById('div');
+// const divCardCenter = document.getElementById('div');
 
-function removeDiv() {
-  divCardCenter.remove();
-}
+// function removeDiv() {
+//   divCardCenter.remove();
+// }
 
 const translate = document.getElementById('translate');
 const sPast = document.getElementById('sPast');
@@ -74,6 +74,14 @@ const htmlFalsePastSimple = `<div class ="adjacent"> <span class ="textRed">Фо
 
 const htmlTruePastParticiple = '<div class ="adjacent"> Форма верна </div>';
 const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">Форма глагола неверная!</span> <span class="textGreen">Надо:  ${pastParticiple[verb].toUpperCase()} </span></div>`;
+
+function checkVerb(string, input) {
+  const arrStr = string.split(', ');
+  for (let i = 0; i <= arrStr.length; i += i) {
+    if (arrStr[i] === input) { return true; }
+  }
+  return false;
+}
 
 function getInputTranslate() {
   const tr = translate.value.toLowerCase();
@@ -105,7 +113,7 @@ function getInputPastSimple() {
 }
 
 function getInputPastParticiple() {
-  sP = sParticiple.value.toLowerCase();
+  const sP = sParticiple.value.toLowerCase();
   if (sP === pastParticiple[verb]) {
     document.getElementById('sParticipleLi').insertAdjacentHTML('beforeend', '+1');
     document.getElementById('sParticipleLi').insertAdjacentHTML('afterend', htmlTruePastParticiple);
@@ -124,14 +132,6 @@ function createButton(cssClass, textCont) {
 }
 
 const btnStart = createButton('btn', 'start');
-
-function checkVerb(string, input) {
-  arrStr = string.split(', ');
-  for (let i = 0; i <= arrStr.length; i += i) {
-    if (arrStr[i] === input) { return true; }
-  }
-  return false;
-}
 
 function getInput() {
   getInputTranslate();
