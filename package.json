@@ -1,0 +1,26 @@
+{
+  "name": "irregularverb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myJS.js",
+  "scripts": {
+    "c": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix .\\*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexMurrr/irregularVerbs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexMurrr/irregularVerbs/issues"
+  },
+  "homepage": "https://github.com/AlexMurrr/irregularVerbs#readme",
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
