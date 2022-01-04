@@ -84,7 +84,7 @@ const htmlFalsePastParticiple = `<div class ="adjacent"> <span class ="textRed">
 
 function checkVerb(string, input) {
   const arrStr = string.split(", ");
-  for (let i = 0; i <= arrStr.length; i += i) {
+  for (let i = 0; i <= arrStr.length; i += 1) {
     if (arrStr[i] === input) {
       return true;
     }
