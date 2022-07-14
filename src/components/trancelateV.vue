@@ -1,7 +1,9 @@
 <template>
 <div>
   Translate: &nbsp;&nbsp;
-  <input type="text" id="translate" placeholder="перевод" autofocus />
+  <input type="text" 
+   id="translate" 
+   placeholder="перевод" autofocus />
 </div>
 </template>
 

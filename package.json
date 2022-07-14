@@ -8,6 +8,7 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "pinia": "^2.0.16",
     "vue": "^3.2.37"
   },
   "devDependencies": {
