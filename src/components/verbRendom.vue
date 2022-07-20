@@ -1,15 +1,25 @@
-<script setup>
+<script>
 
-let setverbs = new Set();
-set(['be', '[быть, являться]', "['was, were']", 'been']);
-set(['beat', '[бить, колотить]', 'beat', 'beaten']);
-set(['become', 'становиться', 'became', 'become']);
+export default{
 
+  data(){
+    return{
+        verbForms: {
+            1: ['be', '[быть, являться]', "['was, were']", 'been'],
+            2: ['beat', '[бить, колотить]', 'beat', 'beaten'],
+            3: ['become', 'становиться', 'became', 'become']
+        }
+    }
+  }
+
+}
 </script>
 
- <template>
-<h1>dsfsdfdf</h1>
- </template>
+<template>
+    <div>
+        {{verbForms[1]}}
+    </div>
+</template>
 
  <style>
  

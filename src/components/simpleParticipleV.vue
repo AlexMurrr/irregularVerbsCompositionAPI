@@ -8,7 +8,8 @@
 </div>
 </template>
 
-<script>
+<script setup>
+//import verbs from "../stores/verbs"
 
 </script>
 
