@@ -1,5 +1,5 @@
 <script>
-
+import h1V from './h1V.vue'
 export default{
 
   data(){
@@ -16,13 +16,15 @@ export default{
         return Math.floor(Math.random() * Object.keys(this.verbForms).length)
     }
   }
-
+  
 }
+
+
 </script>
 
 <template>
     <div>
-        {{rendomNumFromVerbs}}
+        {{verbForms[rendomNumFromVerbs]}}
     </div>
 </template>
 
