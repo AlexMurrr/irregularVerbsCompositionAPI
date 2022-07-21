@@ -10,6 +10,11 @@ export default{
             3: ['become', 'становиться', 'became', 'become']
         }
     }
+  },
+  computed:{
+    rendomNumFromVerbs (){
+        return Math.floor(Math.random() * Object.keys(this.verbForms).length)
+    }
   }
 
 }
@@ -17,7 +22,7 @@ export default{
 
 <template>
     <div>
-        {{verbForms[1]}}
+        {{rendomNumFromVerbs}}
     </div>
 </template>
 
