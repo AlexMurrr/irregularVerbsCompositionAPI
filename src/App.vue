@@ -4,6 +4,9 @@
     import simplePast from "./components/simplePastV.vue"
     import simpleParticiple from "./components/simpleParticipleV.vue"
     import ver from "./components/verbRendom.vue"
+    import {usePinia} from '@/stores/verbs'
+
+    console.log(usePinia)
 </script>
 
 <template>

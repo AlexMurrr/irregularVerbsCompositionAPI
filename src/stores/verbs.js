@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export default  useStore = defineStore('storeId', {
+export const  useStore = defineStore('storeId', {
  
   state: () => {
     return {      

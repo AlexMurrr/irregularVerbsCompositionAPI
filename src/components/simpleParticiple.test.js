@@ -2,6 +2,6 @@ import { render, prettyDOM } from '@testing-library/vue';
 import simpleParticiple from "./simpleParticipleV.vue"
 
 test ('render simpleParticiple', ()=> {
-   const {debag} = render(simpleParticiple)
-   debag  
+   const {debug} = render(simpleParticiple)
+   debug()  
 })
