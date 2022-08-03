@@ -12,7 +12,7 @@ export const  useStore = defineStore('storeId', {
       4: ['bend', 'гнуть', 'bent', 'bent'],
       5: ['bet', 'держать пари', 'bet', 'bet']
     },
-    rendArrFromVerbForms: [],   
+    rendArrFromVerbForms: '',   
     }
   },
   getters:{
