@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-//import verbs from "../stores/verbs"
+
 
 </script>
 

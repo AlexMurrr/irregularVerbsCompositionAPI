@@ -22,6 +22,6 @@ export const  useStore = defineStore('storeId', {
     rendomNumFromVerbs (){
       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
         Object.keys(this.verbForms).length)]     
-  }
+    }
   }
 })
