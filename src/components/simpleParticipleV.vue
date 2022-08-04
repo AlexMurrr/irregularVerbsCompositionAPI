@@ -1,5 +1,5 @@
 <script setup>
-
+  const props = defineProps({simpleParticiple: String})
 </script>
 
 <template>
@@ -9,6 +9,7 @@
  type="text"
  id="sParticiple"
  placeholder="простое причастие"/>
+ &nbsp; {{props.simpleParticiple}}
 </div>
 </template>
 

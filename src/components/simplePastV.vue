@@ -1,5 +1,5 @@
 <script setup>
-
+  const props = defineProps({simplePast: String});
 </script>
 
 <template>
@@ -8,6 +8,7 @@
   <input type="text" 
    id="sPast" 
    placeholder="простое прошедшее" />
+   &nbsp; {{simplePast}}
 </div>
 </template>
 

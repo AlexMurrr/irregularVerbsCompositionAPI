@@ -1,11 +1,6 @@
 <script setup>
-
     import ver from "./components/verbRendom.vue"
-    import {mapActions, storeToRefs} from 'pinia'
-
-  
-   
-</script>
+  </script>
 
 <template>
 

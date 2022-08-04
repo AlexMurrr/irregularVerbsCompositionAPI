@@ -1,10 +1,12 @@
 <script setup>
 
+const props = defineProps({verb: String});
+
 </script>
 
 <template>
   <h1>Изучаем неправильные глаголы</h1>  
-  <h2>Введите имя глагола:</h2>
+  <h2>Введите имя глагола: {{props.verb}}</h2>
 </template>
 
 <style>

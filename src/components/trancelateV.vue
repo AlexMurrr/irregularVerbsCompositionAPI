@@ -1,5 +1,5 @@
 <script setup>
-
+  const props = defineProps({translate: String});
 </script>
 
 <template>
@@ -7,8 +7,10 @@
   Translate: &nbsp;&nbsp;
   <input type="text" 
    id="translate" 
-   placeholder="перевод" autofocus />
+   placeholder="перевод" autofocus />   
+    &nbsp; {{props.translate}}
 </div>
+
 </template>
 
 <style scoped>

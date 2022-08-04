@@ -5,26 +5,24 @@ import trancelate from './trancelateV.vue'
 import simplePast from './simplePastV.vue'
 import simpleParticiple from './simpleParticipleV.vue'
 import {useStoreVerbs} from '../stores/verbs'
- import {mapActions, storeToRefs} from 'pinia'  
+import {storeToRefs} from 'pinia'  
 
 const storeVerbs = useStoreVerbs();
 const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
 const {rendomNumFromVerbs} = storeVerbs;
+
+
     
 </script>
 
 <template>
-  <h1V/>
-  <trancelate/>
-  <simplePast/>
-  <simpleParticiple/>
+  <h1V :verb=rendArrFromVerbForms[0] />
+  <trancelate :translate=rendArrFromVerbForms[1] />
+  <simplePast :simplePast=rendArrFromVerbForms[2] />
+  <simpleParticiple :simpleParticiple=rendArrFromVerbForms[3] />
 
-  <button @click="rendomNumFromVerbs">random</button>
-<h3>{{indexverb}}</h3>
-<h3>{{rendArrFromVerbForms}}</h3>
-
-  <main>        
-  </main>
+<button @click="rendomNumFromVerbs">random</button>
+<h3>{{rendArrFromVerbForms}}</h3> 
 
 </template>
 
