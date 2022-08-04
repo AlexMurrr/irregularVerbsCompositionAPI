@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
 <div>
  Simple Participle: &nbsp;&nbsp;
@@ -7,11 +11,6 @@
  placeholder="простое причастие"/>
 </div>
 </template>
-
-<script setup>
-
-
-</script>
 
 <style scoped>
   div{

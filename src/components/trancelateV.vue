@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
 <div>
   Translate: &nbsp;&nbsp;
@@ -6,10 +10,6 @@
    placeholder="перевод" autofocus />
 </div>
 </template>
-
-<script>
-
-</script>
 
 <style scoped>
   div{

@@ -1,11 +1,11 @@
+<script setup>
+
+</script>
+
 <template>
   <h1>Изучаем неправильные глаголы</h1>  
   <h2>Введите имя глагола:</h2>
 </template>
-
-<script>
-
-</script>
 
 <style>
   h1 {

@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
 <div>
   Simple Past: &nbsp;&nbsp;
@@ -6,10 +10,6 @@
    placeholder="простое прошедшее" />
 </div>
 </template>
-
-<script>
-
-</script>
 
 <style scoped>
   div{
