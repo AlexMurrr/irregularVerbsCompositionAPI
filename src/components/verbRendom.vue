@@ -1,17 +1,19 @@
 <script setup>
-
-import h1V from './h1V.vue'
-import trancelate from './trancelateV.vue'
-import simplePast from './simplePastV.vue'
-import simpleParticiple from './simpleParticipleV.vue'
-import {useStoreVerbs} from '../stores/verbs'
-import {storeToRefs} from 'pinia'  
+import {onBeforeMount} from 'vue'; 
+import h1V from './h1V.vue';
+import trancelate from './trancelateV.vue';
+import simplePast from './simplePastV.vue';
+import simpleParticiple from './simpleParticipleV.vue';
+import {useStoreVerbs} from '../stores/verbs';
+import {storeToRefs} from 'pinia';
 
 const storeVerbs = useStoreVerbs();
 const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
 const {rendomNumFromVerbs} = storeVerbs;
 
-
+onBeforeMount(() => {
+      rendomNumFromVerbs();
+    });
     
 </script>
 
