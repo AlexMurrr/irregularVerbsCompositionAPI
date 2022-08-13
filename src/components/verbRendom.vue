@@ -6,6 +6,7 @@ import simplePast from './simplePastV.vue';
 import simpleParticiple from './simpleParticipleV.vue';
 import {useStoreVerbs} from '../stores/verbs';
 import {storeToRefs} from 'pinia';
+import {ref} from 'vue'
 
 const storeVerbs = useStoreVerbs();
 const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
@@ -14,6 +15,15 @@ const {rendomNumFromVerbs} = storeVerbs;
 onBeforeMount(() => {
       rendomNumFromVerbs();
     });
+
+const isVisibleBtn = ref(false); 
+
+function visibleBtnTofalse(){
+  isVisibleBtn.value = false;
+}
+function visibleBtnToTrue(){
+  isVisibleBtn.value = true;
+}
     
 </script>
 
@@ -23,8 +33,12 @@ onBeforeMount(() => {
   <simplePast :simplePast=rendArrFromVerbForms[2] />
   <simpleParticiple :simpleParticiple=rendArrFromVerbForms[3] />
 
-<button @click="rendomNumFromVerbs">random</button>
-<h3>{{rendArrFromVerbForms}}</h3> 
+<button  v-if="isVisibleBtn"  @click="rendomNumFromVerbs();
+                 visibleBtnTofalse();                   
+                "
+>next</button>
+<button v-else @click="visibleBtnToTrue()">check</button>
+<h3>{{rendArrFromVerbForms}} and {{isVisibleBtn}}</h3> 
 
 </template>
 
