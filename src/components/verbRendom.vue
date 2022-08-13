@@ -29,19 +29,35 @@ function visibleBtnToTrue(){
 
 <template>
   <h1V :verb=rendArrFromVerbForms[0] />
-  <trancelate :translate=rendArrFromVerbForms[1] />
-  <simplePast :simplePast=rendArrFromVerbForms[2] />
-  <simpleParticiple :simpleParticiple=rendArrFromVerbForms[3] />
+  <trancelate class="inputVerb" 
+              :translate=rendArrFromVerbForms[1]
+               />
+  <simplePast class="inputVerb" 
+              :simplePast=rendArrFromVerbForms[2]
+               />
+  <simpleParticiple class="inputVerb" 
+                    :simpleParticiple=rendArrFromVerbForms[3]
+                     />
 
 <button  v-if="isVisibleBtn"  @click="rendomNumFromVerbs();
-                 visibleBtnTofalse();                   
-                "
+                                      visibleBtnTofalse();                   
+                                     "
 >next</button>
-<button v-else @click="visibleBtnToTrue()">check</button>
+<button v-else @click="visibleBtnToTrue()
+                       
+                      "
+>check</button>
+
+
 <h3>{{rendArrFromVerbForms}} and {{isVisibleBtn}}</h3> 
 
 </template>
 
 <style>
-
+  .inputVerb{
+  font-weight: 400;
+  line-height: 1.45;
+  font-size: 1.6rem;
+  font-weight: 700;
+  }
 </style>
