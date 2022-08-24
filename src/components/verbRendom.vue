@@ -24,6 +24,9 @@ function visibleBtnTofalse(){
 function visibleBtnToTrue(){
   isVisibleBtn.value = true;
 }
+//  const childred = ref();
+
+//  childred.value.doSomething;
     
 </script>
 
@@ -31,6 +34,7 @@ function visibleBtnToTrue(){
   <h1V :verb=rendArrFromVerbForms[0] />
   <trancelate class="inputVerb" 
               :translate=rendArrFromVerbForms[1]
+              ref="childred"
                />
   <simplePast class="inputVerb" 
               :simplePast=rendArrFromVerbForms[2]
@@ -43,7 +47,7 @@ function visibleBtnToTrue(){
                                       visibleBtnTofalse();                   
                                      "
 >next</button>
-<button v-else @click="visibleBtnToTrue()
+<button v-else @click="visibleBtnToTrue();
                        
                       "
 >check</button>
@@ -54,10 +58,10 @@ function visibleBtnToTrue(){
 </template>
 
 <style>
-  .inputVerb{
+  /* .inputVerb{
   font-weight: 400;
   line-height: 1.45;
   font-size: 1.6rem;
   font-weight: 700;
-  }
+  } */
 </style>

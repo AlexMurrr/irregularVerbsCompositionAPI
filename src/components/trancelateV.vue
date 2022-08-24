@@ -1,23 +1,43 @@
 <script setup>
+
+import {ref, computed} from 'vue'
+
   const props = defineProps({translate: String});
+  const interTranslation = ref('');
+  const result = ref('');
+
+  const child = ref();
+
+  function compareTranslate(){
+    if (interTranslation===props.translate){
+      result.value = 'eeee'
+    }
+  }
+
+ function doSomething(){
+  console.log(1);
+}
+
+defineExpose({
+  doSomething,
+});
+
+
 </script>
 
 <template>
 <div>
   Translate: &nbsp;&nbsp;
-  <input type="text" 
-   id="translate" 
-   placeholder="перевод" autofocus />   
-    &nbsp; {{props.translate}}
+  <input
+    v-model="interTranslation"
+    type="text" 
+    placeholder="перевод" autofocus
+   />   
+    &nbsp; {{props.translate}} &nbsp;{{result}}
 </div>
 
 </template>
 
 <style scoped>
-  div{
-  font-weight: 400;
-  line-height: 1.45;
-  font-size: 1.6rem;
-  font-weight: 700;
-  }
+ 
 </style>
