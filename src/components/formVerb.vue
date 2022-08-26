@@ -1,6 +1,10 @@
 <script setup>
 import { ref } from "@vue/reactivity";
 
+const props = defineProps({translateTrue: String,
+                           pastSimpleTrue: String,
+                           partizipleTrue: String,
+                           });
 
 const tranclate = ref('');
 const pastSimple = ref('');
@@ -10,7 +14,7 @@ const partiziple = ref('');
     
 <template>
     <div>
-
+{{props.translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}}
     <form @submit.prevent="submit">
 
      <label for="tr">Translate:</label> <br/>

@@ -1,7 +1,6 @@
 <script setup>
 import {onBeforeMount} from 'vue'; 
 import h1V from './h1V.vue';
-
 import {useStoreVerbs} from '../stores/verbs';
 import {storeToRefs} from 'pinia';
 import {ref} from 'vue'
@@ -15,24 +14,15 @@ onBeforeMount(() => {
       rendomNumFromVerbs();
     });
 
-const isVisibleBtn = ref(false); 
-
-
-function visibleBtnTofalse(){
-  isVisibleBtn.value = false;
-}
-function visibleBtnToTrue(){
-  isVisibleBtn.value = true;
-}
-
-
 </script>
 
 <template>
   <h1V :verb=rendArrFromVerbForms[0] />
-  
-
-<form-verb/>
+<form-verb
+  :translateTrue=rendArrFromVerbForms[1]
+  :pastSimpleTrue=rendArrFromVerbForms[2]
+  :partizipleTrue=rendArrFromVerbForms[3]
+/>
 
 <h3>{{rendArrFromVerbForms}} and {{isVisibleBtn}}</h3> 
 
