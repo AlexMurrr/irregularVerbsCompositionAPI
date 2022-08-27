@@ -1,5 +1,10 @@
 <script setup>
 import { ref } from "@vue/reactivity";
+import {useStoreVerbs} from '../stores/verbs';
+
+const storeVerbs = useStoreVerbs();
+const {rendomNumFromVerbs} = storeVerbs;
+const rendVerb = rendomNumFromVerbs;
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -10,7 +15,7 @@ const tranclate = ref('');
 const pastSimple = ref('');
 const partiziple = ref('');
 
-let isTrue =ref(true);
+let isTrue =ref(false);
 
 </script>
     
@@ -28,8 +33,10 @@ let isTrue =ref(true);
      <label for="tr"> Simple Participle:</label> <br/>
     <input type="text" placeholder="Введите простое причастие" v-model="partiziple">
       <br/>
-    <button type="submit" v-if="isTrue" @click="isTrue=!isTrue">Start</button>
-    <button type="submit" v-else @click="isTrue=true">Check</button>    
+    <button type="submit" v-if="isTrue" @click="isTrue=!isTrue,
+                                                rendVerb()"
+                                                >Start</button>
+    <button type="submit" v-else @click="isTrue=!isTrue">Check</button>    
     <hr>
      </form> 
 
