@@ -12,7 +12,10 @@ export const  useStoreVerbs = defineStore('storeId', {
       4: ['bend', 'гнуть', 'bent', 'bent'],
       5: ['bet', 'держать пари', 'bet', 'bet']
     },
-    rendArrFromVerbForms: '',   
+    rendArrFromVerbForms: '',  
+    translateStore: '', 
+    pastSimpleStore: '', 
+    pastParticipleStore: '', 
     }
   },
   getters:{
@@ -22,6 +25,21 @@ export const  useStoreVerbs = defineStore('storeId', {
     rendomNumFromVerbs (){
       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
         Object.keys(this.verbForms).length)]     
-    }
+    },
+    checkTranslate(inputVerb, trueVerb){
+      if(inputVerb===trueVerb) {
+        this.translateStore = true;
+      }else this.translateStore = false;
+    },
+    checkPastSimple(inputVerb, trueVerb){
+      if(inputVerb===trueVerb) {
+        this.pastSimpleStore = true;
+      }else this.pastSimpleStore = false;
+    },
+    checkPastParticiple(inputVerb, trueVerb){
+      if(inputVerb===trueVerb) {
+        this.pastParticipleStore = true;
+      }else this.pastParticipleStore = false;
+    },
   }
 })
