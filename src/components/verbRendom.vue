@@ -24,7 +24,7 @@ onBeforeMount(() => {
   :partizipleTrue=rendArrFromVerbForms[3]
 />
 
-<h3>{{rendArrFromVerbForms}} and {{isVisibleBtn}}</h3> 
+<h3>{{rendArrFromVerbForms}}</h3> 
 
 
 </template>
