@@ -3,6 +3,7 @@ import { ref } from "@vue/reactivity";
 import {useStoreVerbs} from '../stores/verbs';
 import {storeToRefs} from 'pinia';
 
+
 const storeVerbs = useStoreVerbs();
 const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
       checkPastParticiple, resetValue} = storeVerbs;
@@ -66,10 +67,13 @@ function resetValueInput(){
     <hr>
      </form>      
     </div>
+
+    
+    
 </template>
     
 <style scoped>
 .p{
   margin: 10px;
-}
+} 
 </style>

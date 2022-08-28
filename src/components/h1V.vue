@@ -1,4 +1,5 @@
 <script setup>
+import numberPoints from './numberPoints.vue'
 
 const props = defineProps({verb: String});
 
@@ -6,14 +7,14 @@ const props = defineProps({verb: String});
 
 <template>
   <h2>Изучаем неправильные глаголы</h2>  
-  <h3>Введите имя глагола: {{props.verb}}</h3>
+  <h3>Введите для глагола: {{props.verb}}</h3>
+  <number-points class="point"/>
 </template>
 
 <style>
-  /* h1 {
-  font-weight: 500;
-  line-height: 1.45;
-  font-size: 1.8rem;
-  font-weight: 700;
-  } */
+  .point{
+  position: absolute;
+  top: 40px; 
+  left: 850px;  
+}
 </style>
