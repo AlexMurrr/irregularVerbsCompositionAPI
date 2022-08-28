@@ -10,8 +10,8 @@ const rendVerb = rendomNumFromVerbs;
 const check = checkTranslate;
 const past = checkPastSimple;
 const participle = checkPastParticiple;
-const {translateStore, pastSimpleStore, pastParticipleStore} =
-                                               storeToRefs(storeVerbs)
+const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
+       resultSimplePast} = storeToRefs(storeVerbs)
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -22,7 +22,7 @@ const tranclate = ref('');
 const pastSimple = ref('');
 const partiziple = ref('');
 
-let isTrue =ref(false);
+let isTrue = ref(false);
 
 </script>
     
@@ -33,10 +33,11 @@ let isTrue =ref(false);
 
      <label for="tr"><strong>Translate:</strong></label> <br/>
     <input type="text" placeholder="Введите перевод" id="tr" v-model="tranclate">
+    <p class="p" v-html="resultTranslate"></p>
 
-      <br/>
     <label for="tr"><strong>Simple Past:</strong></label> <br/>
     <input type="text" placeholder="Введите простое прошедшее" v-model="pastSimple">
+    <p class="p" v-html="resultSimplePast"></p>
       <br/>
      <label for="tr"><strong> Simple Participle:</strong></label> <br/>
     <input type="text" placeholder="Введите простое причастие" v-model="partiziple">
@@ -60,4 +61,7 @@ let isTrue =ref(false);
 </template>
     
 <style scoped>
+.p{
+  margin: 10px;
+}
 </style>

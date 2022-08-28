@@ -24,9 +24,12 @@ input {
   display: block;
   width: 100%;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 10px;
   margin-bottom: 10px;
+}
+button{
+  background-color: rgb(224, 231, 231);
 }
 
 </style>
