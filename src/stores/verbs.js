@@ -56,5 +56,10 @@ export const  useStoreVerbs = defineStore('storeId', {
         this.resultSimpleParticiple = '<h1>-1</h1>';
       }
     },
+    resetValue(){
+      this.resultTranslate = '';
+      this.resultSimplePast = '';
+      this.resultSimpleParticiple = '';
+    },
   }
 })

@@ -5,13 +5,15 @@ import {storeToRefs} from 'pinia';
 
 const storeVerbs = useStoreVerbs();
 const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
-                                       checkPastParticiple} = storeVerbs;
+      checkPastParticiple, resetValue} = storeVerbs;
 const rendVerb = rendomNumFromVerbs;
 const check = checkTranslate;
 const past = checkPastSimple;
 const participle = checkPastParticiple;
+//const resetVaueRes = resetValueResult;
+
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
-       resultSimplePast} = storeToRefs(storeVerbs)
+       resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -23,6 +25,12 @@ const pastSimple = ref('');
 const partiziple = ref('');
 
 let isTrue = ref(false);
+
+function resetValueInput(){
+  tranclate.value = '';
+  pastSimple.value = '';
+  partiziple.value = '';
+}
 
 </script>
     
@@ -41,9 +49,12 @@ let isTrue = ref(false);
       <br/>
      <label for="tr"><strong> Simple Participle:</strong></label> <br/>
     <input type="text" placeholder="Введите простое причастие" v-model="partiziple">
+    <p class="p" v-html="resultSimplePast"></p>
       <br/>
     <button type="submit" v-if="isTrue" @click="isTrue=!isTrue,
-                                                rendVerb()"
+                                                rendVerb(),
+                                                resetValue(),
+                                                resetValueInput()"
                                                 >Start</button>
     <button type="submit" v-else @click="isTrue=!isTrue,
                                          check(tranclate,translateTrue),
@@ -53,10 +64,6 @@ let isTrue = ref(false);
                                         >Check</button>    
     <hr>
      </form>      
-{{translateStore}}
-{{pastSimpleStore}}
-{{pastParticipleStore}}
-
     </div>
 </template>
     
