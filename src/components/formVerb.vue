@@ -6,11 +6,12 @@ import {storeToRefs} from 'pinia';
 const storeVerbs = useStoreVerbs();
 const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
       checkPastParticiple, resetValue} = storeVerbs;
+
 const rendVerb = rendomNumFromVerbs;
 const check = checkTranslate;
 const past = checkPastSimple;
 const participle = checkPastParticiple;
-//const resetVaueRes = resetValueResult;
+const resetVaueRes = resetValue;
 
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
        resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
@@ -42,7 +43,7 @@ function resetValueInput(){
      <label for="tr"><strong>Translate:</strong></label> <br/>
     <input type="text" placeholder="Введите перевод" id="tr" v-model="tranclate">
     <p class="p" v-html="resultTranslate"></p>
-
+    <br/>
     <label for="tr"><strong>Simple Past:</strong></label> <br/>
     <input type="text" placeholder="Введите простое прошедшее" v-model="pastSimple">
     <p class="p" v-html="resultSimplePast"></p>
@@ -53,7 +54,7 @@ function resetValueInput(){
       <br/>
     <button type="submit" v-if="isTrue" @click="isTrue=!isTrue,
                                                 rendVerb(),
-                                                resetValue(),
+                                                resetVaueRes(),
                                                 resetValueInput()"
                                                 >Start</button>
     <button type="submit" v-else @click="isTrue=!isTrue,

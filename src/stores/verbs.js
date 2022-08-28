@@ -19,6 +19,7 @@ export const  useStoreVerbs = defineStore('storeId', {
     resultTranslate: '',
     resultSimplePast: '',
     resultSimpleParticiple: '',
+    numPoints: 0,
     }
   },
   getters:{
@@ -33,27 +34,33 @@ export const  useStoreVerbs = defineStore('storeId', {
       if(inputVerb===trueVerb) {
         this.translateStore = true;
         this.resultTranslate = '<h1>+1</h1>';
+        this.numPoints++;
       } else {
         this.translateStore = false;
         this.resultTranslate = '<h1>-1</h1>'
+        this.numPoints--;
       }
     },
     checkPastSimple(inputVerb, trueVerb){
       if(inputVerb===trueVerb) {
         this.pastSimpleStore = true;
         this.resultSimplePast = '<h1>+1</h1>';
+        this.numPoints++;
       } else {
         this.pastSimpleStore = false;
         this.resultSimplePast = '<h1>-1</h1>';
+        this.numPoints--;
       }        
     },
     checkPastParticiple(inputVerb, trueVerb){
       if(inputVerb===trueVerb) {
         this.pastParticipleStore = true;
         this.resultSimpleParticiple = '<h1>+1</h1>';
+        this.numPoints++;
       } else {
         this.pastParticipleStore = false;
         this.resultSimpleParticiple = '<h1>-1</h1>';
+        this.numPoints--;
       }
     },
     resetValue(){
