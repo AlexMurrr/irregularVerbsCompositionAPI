@@ -66,9 +66,7 @@ function resetValueInput(){
                                         >Check</button>    
     <hr>
      </form>      
-    </div>
-
-    
+    </div>    
     
 </template>
     
