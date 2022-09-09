@@ -8,7 +8,6 @@ import formVerb from './formVerb.vue'
 import start from './start.vue'
 
 
-
 const storeVerbs = useStoreVerbs();
 const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
 const {rendomNumFromVerbs} = storeVerbs;
@@ -31,7 +30,7 @@ function myLoop(){
 
 onBeforeMount(() => {
       myLoop();
-    });
+    });    
 
 </script>
 
@@ -44,13 +43,14 @@ onBeforeMount(() => {
   :translateTrue=rendArrFromVerbForms[1]
   :pastSimpleTrue=rendArrFromVerbForms[2]
   :partizipleTrue=rendArrFromVerbForms[3]
-
 />
 <start 
   :time = time
 />
+
 </template>
 
 <style>
- 
+  
 </style>
+ 

@@ -7,24 +7,32 @@ const props = defineProps({verb: String});
 
 <template>
 
-<div class="divHader">
-  <div>
-    <number-points class="point"/>
-    </div>
-  <div>
+<div class="divHader"> 
+
+  <div class="stealth">
+  </div>
+  <div class="hader">
     <h2>Изучаем неправильные глаголы</h2>  
     <h3>Введите для глагола: {{props.verb}}</h3>
   </div>
+
+  <div>
+    <number-points class="point"/>    
+  </div>
+  
 </div>
 
 </template>
 
-
-
 <style>
-  .point{
-  position: absolute;
-  top: 40px; 
-  left: 950px;  
+.divHader{
+  display: flex;
 }
+.stealth{
+  width: 200px; 
+}
+.hader{
+  margin-right: 50px;
+}
+
 </style>

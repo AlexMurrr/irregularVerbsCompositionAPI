@@ -1,11 +1,11 @@
 <script setup>
-    import ver from "./components/verbRendom.vue"
+    import verbRendom from "./components/verbRendom.vue"
   </script>
 
 <template>
 
   <main>    
-    <ver/>
+    <verbRendom />
   </main>
 
 </template>
@@ -18,7 +18,7 @@
   text-align: center;
   color: #2c3e50;
   margin: 60px auto;
-  width: 450px;  
+  width: 800px;  
 }
 body{  
   background-color: rgb(243, 240, 240);
@@ -35,5 +35,7 @@ input {
 button{
   background-color: rgb(224, 231, 231);
 }
+
+
 
 </style>
