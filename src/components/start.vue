@@ -1,7 +1,7 @@
 
 <script setup>
 
-const props = defineProps({time:Number});   
+const props = defineProps({time:[Number, String]});   
 
 </script>
     
