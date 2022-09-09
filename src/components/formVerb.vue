@@ -51,7 +51,7 @@ function resetValueInput(){
       <br/>
      <label for="tr"><strong> Simple Participle:</strong></label> <br/>
     <input type="text" placeholder="Введите простое причастие" v-model="partiziple">
-    <p class="p" v-html="resultSimplePast"></p>
+    <p class="p" v-html="resultSimpleParticiple"></p>
       <br/>
     <button type="submit" v-if="isTrue" @click="isTrue=!isTrue,
                                                 rendVerb(),

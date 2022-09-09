@@ -7,7 +7,7 @@ const props = defineProps({time:Number});
     
 <template>
     <div class="circle">
-       <h1 class="time">{{time}}</h1>
+       <h1 class="time">{{props.time}}</h1>
     </div>
 </template>
     
