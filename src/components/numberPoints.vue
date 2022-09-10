@@ -21,8 +21,8 @@ const {numPoints} = storeToRefs(storeVerbs)
     background-color: rgb(243, 243, 250);
     border: 3px solid rgb(31, 30, 30);
     font-size: 20px;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     width: 100px;
     height: 100px;

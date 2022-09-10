@@ -32,7 +32,7 @@ const props = defineProps({verb: String});
   width: 200px; 
 }
 .hader{
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 </style>

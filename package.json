@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --port 4173",
-    "test": "jest --watchAll"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "pinia": "^2.0.16",
@@ -20,6 +21,7 @@
     "babel-jest": "^28.1.2",
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
-    "vite": "^2.9.12"
+    "vite": "^2.9.12",
+    "vitest": "^0.23.1"
   }
 }

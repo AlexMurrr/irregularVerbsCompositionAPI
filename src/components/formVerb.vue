@@ -41,7 +41,7 @@ function resetValueInput(){
 {{props.translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}}
     <form @submit.prevent="submit">
 
-    <label for="tr"><strong>Translate:</strong></label> <br/>
+    <label for="tr" class="label"><strong>Translate:</strong></label> <br/>
     <input type="text" 
     class="input"
     placeholder="Введите перевод"    
@@ -49,7 +49,7 @@ function resetValueInput(){
     <p class="p" v-html="resultTranslate"></p>
     <br/>
 
-    <label for="tr"><strong>Simple Past:</strong></label> <br/>
+    <label for="tr" class="label"><strong>Simple Past:</strong></label> <br/>
     <input type="text"
     class="input"
     placeholder="Введите простое прошедшее" 
@@ -57,7 +57,7 @@ function resetValueInput(){
     <p class="p" v-html="resultSimplePast"></p>
     <br/>
 
-     <label for="tr"><strong> Simple Participle:</strong></label> <br/>
+    <label for="tr" class="label"><strong> Simple Participle:</strong></label> <br/>
     <input type="text" 
     class="input"
     placeholder="Введите простое причастие" 
@@ -82,11 +82,13 @@ function resetValueInput(){
 </template>
     
 <style scoped>
-.p{
-  margin: 10px;
-} 
+
 .input{
-  width: 400px;
-  margin: auto;
+  width: 450px;
+  margin: 15px auto;
+}
+.label{
+  color: #17173f;
+  
 }
 </style>
