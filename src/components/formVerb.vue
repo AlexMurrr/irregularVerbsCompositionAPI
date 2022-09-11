@@ -6,7 +6,7 @@ import {storeToRefs} from 'pinia';
 
 const storeVerbs = useStoreVerbs();
 const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
-      checkPastParticiple, resetValue} = storeVerbs;
+      checkPastParticiple, resetValue, removeEmptySpace} = storeVerbs;
 
 const rendVerb = rendomNumFromVerbs;
 const check = checkTranslate;
@@ -70,14 +70,16 @@ function resetValueInput(){
                                                 resetValueInput()"
                                                 >Start</button>
     <button type="submit" v-else @click="isTrue=!isTrue,
-                                         check(tranclate,translateTrue),
-                                         past(pastSimple, pastSimpleTrue),
-                                         participle(partiziple, partizipleTrue)
+              check(removeEmptySpace(tranclate),removeEmptySpace(translateTrue)),
+              past(removeEmptySpace(pastSimple), removeEmptySpace(pastSimpleTrue)),
+              participle(removeEmptySpace(partiziple), removeEmptySpace(partizipleTrue))
                                         "
                                         >Check</button>    
     <hr>
      </form>      
-    </div>    
+    </div>   
+
+    {{removeEmptySpace(tranclate)}} 
     
 </template>
     

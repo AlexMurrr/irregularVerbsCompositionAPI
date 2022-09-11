@@ -70,5 +70,8 @@ export const  useStoreVerbs = defineStore('storeId', {
       this.resultSimplePast = '';
       this.resultSimpleParticiple = '';
     },
+    removeEmptySpace(verb){
+      return verb.replace(/\s/g,'');
+    }
   }
 })
