@@ -20,8 +20,8 @@ export const  useStoreVerbs = defineStore('storeId', {
     resultSimplePast: '',
     resultSimpleParticiple: '',
     numPoints: 0,
-    resultMinus: '<h1 style = "color: #d15a5a">-1</h1>',
-    resultPlus: '<h1 style = "color: #66d17e">+1</h1>'
+    resultMinus: `<p>Ваш ответ неверный</p><h2 style = "color: #d15a5a">-1</h2>`,
+    resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>',    
     }
   },
   getters:{
@@ -39,7 +39,9 @@ export const  useStoreVerbs = defineStore('storeId', {
         this.numPoints++;
       } else {
         this.translateStore = false;
-        this.resultTranslate = this.resultMinus;
+        this.resultTranslate = `<p>Ваш ответ неверный, верный - 
+                                ${this.rendArrFromVerbForms[1]} </p>
+                                <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }
     },
@@ -50,7 +52,9 @@ export const  useStoreVerbs = defineStore('storeId', {
         this.numPoints++;
       } else {
         this.pastSimpleStore = false;
-        this.resultSimplePast = this.resultMinus;
+        this.resultSimplePast =`<p>Ваш ответ неверный, верный - 
+                                   ${this.rendArrFromVerbForms[2]} </p>
+                                   <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }        
     },
@@ -61,7 +65,9 @@ export const  useStoreVerbs = defineStore('storeId', {
         this.numPoints++;
       } else {
         this.pastParticipleStore = false;
-        this.resultSimpleParticiple = this.resultMinus;
+        this.resultSimpleParticiple = `<p>Ваш ответ неверный, верный - 
+                                       ${this.rendArrFromVerbForms[3]} </p>
+                                       <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }
     },

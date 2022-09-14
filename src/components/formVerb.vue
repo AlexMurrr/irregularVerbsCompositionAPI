@@ -15,7 +15,7 @@ const participle = checkPastParticiple;
 const resetVaueRes = resetValue;
 
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
-       resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
+       resultSimplePast, resultSimpleParticiple, r} = storeToRefs(storeVerbs)
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -77,10 +77,7 @@ function resetValueInput(){
                                         >Check</button>    
     <hr>
      </form>      
-    </div>   
-
-    {{removeEmptySpace(tranclate)}} 
-    
+    </div>    
 </template>
     
 <style scoped>
