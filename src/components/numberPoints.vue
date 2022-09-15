@@ -9,7 +9,7 @@ const {numPoints} = storeToRefs(storeVerbs)
 </script>
     
 <template>
-    <div class="point">
+    <div class="point" :class="{true:true, green: numPoints>0, red: numPoints<0}">
         <div class="amount">
         Points: <h2 class="h1"> {{numPoints}}</h2>
         </div>
@@ -17,8 +17,7 @@ const {numPoints} = storeToRefs(storeVerbs)
 </template>
     
 <style scoped>
-    .point{
-    background-color: rgb(243, 243, 250);
+    .point{   
     border: 3px solid rgb(31, 30, 30);
     font-size: 20px;
     width: 22px;
@@ -37,5 +36,14 @@ const {numPoints} = storeToRefs(storeVerbs)
       margin: 6px;  
       color: #9e9393;
       font-size: 30px;
+    }    
+    .grey{
+       background-color: rgb(243, 243, 250);
+    }
+    .red{
+      background-color: #fccdcd;
+    }
+     .green{
+      background-color: #ccfcd6;
     }
 </style>

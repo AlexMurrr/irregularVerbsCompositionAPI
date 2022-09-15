@@ -24,7 +24,7 @@ function go (){
 
 function myLoop(){
         for(let i=0; i<4; i++){
-          setTimeout(go, i*1500)       
+          setTimeout(go, i*1000)       
       }  
     }        
 
