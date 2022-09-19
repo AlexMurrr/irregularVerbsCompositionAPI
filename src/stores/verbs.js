@@ -5,8 +5,8 @@ export const  useStoreVerbs = defineStore('storeId', {
   state: () => {
     return {      
     verbForms: {
-      0: ['be', '[быть, являться]', "['was, were']", 'been'],
-      1: ['beat', '[бить, колотить]', 'beat', 'beaten'],
+      0: ['be', 'быть, являться', 'was, were', 'been'],
+      1: ['beat', 'бить, колотить', 'beat', 'beaten'],
       2: ['become', 'становиться', 'became', 'become'],
       3: ['begin', 'начинать', 'began', 'begun'],
       4: ['bend', 'гнуть', 'bent', 'bent'],
@@ -33,14 +33,16 @@ export const  useStoreVerbs = defineStore('storeId', {
         Object.keys(this.verbForms).length)]     
     },
     checkTranslate(inputVerb, trueVerb){
-      if(inputVerb===trueVerb) {
+      if(inputVerb===trueVerb){
         this.translateStore = true;
         this.resultTranslate = this.resultPlus;
         this.numPoints++;
       } else {
         this.translateStore = false;
-        this.resultTranslate = `<p>Ваш ответ неверный, верный - 
-                                ${this.rendArrFromVerbForms[1]} </p>
+        this.resultTranslate = `<p color = "green">Ваш ответ неверный, верный - 
+                                <b><span style = "color: #55a34e; font-size: 120%">
+                                ${this.rendArrFromVerbForms[1]}
+                                </span></b> </p>
                                 <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }
@@ -53,7 +55,9 @@ export const  useStoreVerbs = defineStore('storeId', {
       } else {
         this.pastSimpleStore = false;
         this.resultSimplePast =`<p>Ваш ответ неверный, верный - 
+                                   <b><span style = "color: #55a34e; font-size: 120%">
                                    ${this.rendArrFromVerbForms[2]} </p>
+                                   </span></b> </p>
                                    <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }        
@@ -66,7 +70,9 @@ export const  useStoreVerbs = defineStore('storeId', {
       } else {
         this.pastParticipleStore = false;
         this.resultSimpleParticiple = `<p>Ваш ответ неверный, верный - 
+                                       <b><span style = "color: #55a34e; font-size: 120%">
                                        ${this.rendArrFromVerbForms[3]} </p>
+                                       </span></b> </p>
                                        <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }
@@ -78,6 +84,11 @@ export const  useStoreVerbs = defineStore('storeId', {
     },
     removeEmptySpace(verb){
       return verb.replace(/\s/g,'');
+    },
+    arrayFromString(str){
+      
+      return str.split(", ");
     }
   }
 })
+

@@ -9,13 +9,13 @@ const {rendomNumFromVerbs, checkTranslate, checkPastSimple,
       checkPastParticiple, resetValue, removeEmptySpace} = storeVerbs;
 
 const rendVerb = rendomNumFromVerbs;
-const check = checkTranslate;
-const past = checkPastSimple;
-const participle = checkPastParticiple;
+const translateCheck = checkTranslate;
+const pastCheck = checkPastSimple;
+const participleCheck = checkPastParticiple;
 const resetVaueRes = resetValue;
 
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
-       resultSimplePast, resultSimpleParticiple, r} = storeToRefs(storeVerbs)
+       resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -36,20 +36,7 @@ function resetValueInput(){
   partiziple.value = '';
 }
 
-function inputNotVoid(){
-  if(tranclate.value ==='' || pastSimple.value === '' || partiziple.value === ''){
-  alert('Есть незаполненные поля!');
-  return false;
-}else 
-  return true;   
-}
 
-function checkMethods(){
-    isTrue=!isTrue;             
-    check(removeEmptySpace(tranclate),removeEmptySpace(translateTrue));
-    past(removeEmptySpace(pastSimple), removeEmptySpace(pastSimpleTrue));
-    participle(removeEmptySpace(partiziple), removeEmptySpace(partizipleTrue));
-}
 </script>
     
 <template>
@@ -87,9 +74,9 @@ function checkMethods(){
                                                 >Start</button>
                                                 
     <button class="btn" type="submit" v-else @click=" isTrue=!isTrue;             
-          check(removeEmptySpace(tranclate),removeEmptySpace(translateTrue));
-          past(removeEmptySpace(pastSimple), removeEmptySpace(pastSimpleTrue));
-          participle(removeEmptySpace(partiziple), removeEmptySpace(partizipleTrue));
+          translateCheck(removeEmptySpace(tranclate),removeEmptySpace(translateTrue));
+          pastCheck(removeEmptySpace(pastSimple), removeEmptySpace(pastSimpleTrue));
+          participleCheck(removeEmptySpace(partiziple), removeEmptySpace(partizipleTrue));
                                         ">Check</button>    
     <hr>
      </form>      
