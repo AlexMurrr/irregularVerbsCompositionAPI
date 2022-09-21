@@ -1,5 +1,6 @@
 <script setup>
 import numberPoints from './numberPoints.vue'
+import userHi from './userHi.vue' 
 
 const props = defineProps({verb: String});
 
@@ -10,6 +11,7 @@ const props = defineProps({verb: String});
 <div class="divHader"> 
 
   <div class="stealth">
+    <user-hi/>
   </div>
   <div class="hader">
     <h2>Изучаем неправильные глаголы</h2>  
