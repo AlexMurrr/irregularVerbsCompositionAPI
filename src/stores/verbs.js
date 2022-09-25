@@ -22,7 +22,7 @@ export const  useStoreVerbs = defineStore('storeId', {
     numPoints: 0,
     resultMinus: `<p>Ваш ответ неверный</p><h2 style = "color: #d15a5a">-1</h2>`,
     resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>', 
-    name: 'Alex',
+    name: 'Hi, Alex!',
     }
   },
   getters:{

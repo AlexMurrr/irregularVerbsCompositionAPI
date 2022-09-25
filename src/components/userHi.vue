@@ -12,13 +12,19 @@ const {name} = storeToRefs(useStore)
 </script>
     
 <template>
-    <div>
-        {{name}}
+    <div class="nameHi">
+        <h2 class="header2">{{name}}</h2>
     </div>
 
 </template>
     
 <style scoped>
-
-
+    .nameHi{
+        color: #49428d;
+    }
+    .header2{
+        text-align: left;
+        margin-top: 1px;
+        
+    }
 </style>

@@ -10,7 +10,7 @@ const props = defineProps({verb: String});
 
 <div class="divHader"> 
 
-  <div class="stealth">
+  <div class="hi">
     <user-hi/>
   </div>
   <div class="hader">
@@ -30,7 +30,7 @@ const props = defineProps({verb: String});
 .divHader{
   display: flex;
 }
-.stealth{
+.hi{
   width: 200px; 
 }
 .hader{
