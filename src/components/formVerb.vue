@@ -73,7 +73,7 @@ function resetValueInput(){
                                                 >Start</button>
                                                 
     <button class="btn" type="submit" v-else @click=" isTrue=!isTrue;             
-          translateCheck(removeEmptySpace(tranclate),removeEmptySpace(translateTrue));
+          translateCheck(tranclate,translateTrue);
           pastCheck(removeEmptySpace(pastSimple), removeEmptySpace(pastSimpleTrue));
           participleCheck(removeEmptySpace(partiziple), removeEmptySpace(partizipleTrue));
                                         ">Check</button>    

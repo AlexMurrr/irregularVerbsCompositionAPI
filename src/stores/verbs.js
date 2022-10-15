@@ -22,7 +22,7 @@ export const  useStoreVerbs = defineStore('storeId', {
     numPoints: 0,
     resultMinus: `<p>Ваш ответ неверный</p><h2 style = "color: #d15a5a">-1</h2>`,
     resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>', 
-    name: 'Hi, Alex!',
+    name: 'Hi, Alex!',    
     }
   },
   getters:{
@@ -34,7 +34,7 @@ export const  useStoreVerbs = defineStore('storeId', {
         Object.keys(this.verbForms).length)]     
     },
     checkTranslate(inputVerb, trueVerb){
-      if(inputVerb===trueVerb){
+      if(inputVerb===trueVerb || this.oneWordTrue(inputVerb, trueVerb)){
         this.translateStore = true;
         this.resultTranslate = this.resultPlus;
         this.numPoints++;
@@ -49,7 +49,7 @@ export const  useStoreVerbs = defineStore('storeId', {
       }
     },
     checkPastSimple(inputVerb, trueVerb){
-      if(inputVerb===trueVerb) {
+      if(inputVerb===trueVerb || this.oneWordTrue(inputVerb, trueVerb)) {
         this.pastSimpleStore = true;
         this.resultSimplePast = this.resultPlus;
         this.numPoints++;
@@ -64,7 +64,7 @@ export const  useStoreVerbs = defineStore('storeId', {
       }        
     },
     checkPastParticiple(inputVerb, trueVerb){
-      if(inputVerb===trueVerb) {
+      if(inputVerb===trueVerb || this.oneWordTrue(inputVerb, trueVerb)) {
         this.pastParticipleStore = true;
         this.resultSimpleParticiple = this.resultPlus;
         this.numPoints++;
@@ -86,9 +86,12 @@ export const  useStoreVerbs = defineStore('storeId', {
     removeEmptySpace(verb){
       return verb.replace(/\s/g,'');
     },
-    arrayFromString(str){
-      
-      return str.split(", ");
+   
+    oneWordTrue(inputVerb, trueVerb){     
+      const inputVerbs = this.removeEmptySpace(inputVerb);
+      const trueVerbs = this.removeEmptySpace(trueVerb);
+      const trueArr = trueVerbs.split(",");      
+      return trueArr.includes(inputVerbs);       
     }
   }
 })
