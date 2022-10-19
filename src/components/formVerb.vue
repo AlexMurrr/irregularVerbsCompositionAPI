@@ -3,16 +3,10 @@ import { ref } from "@vue/reactivity";
 import {useStoreVerbs} from '../stores/verbs';
 import {storeToRefs} from 'pinia';
 
-
 const storeVerbs = useStoreVerbs();
 const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
-      checkPastParticiple, resetValue, removeEmptySpace} = storeVerbs;
+      checkPastParticiple, resetValue} = storeVerbs;
 
-const rendVerb = rendomNumFromVerbs;
-const translateCheck = checkTranslate;
-const pastCheck = checkPastSimple;
-const participleCheck = checkPastParticiple;
-const resetVaueRes = resetValue;
 
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
        resultSimplePast, resultSimpleParticiple, name} = storeToRefs(storeVerbs)
@@ -67,15 +61,15 @@ function resetValueInput(){
     <p class="p" v-html="resultSimpleParticiple"></p>
       <br/>
     <button class="btn" type="submit" v-if="isTrue" @click="isTrue=!isTrue,
-                                                rendVerb(),
-                                                resetVaueRes(),
+                                               rendomNumFromVerbs(),
+                                                resetValue(),
                                                 resetValueInput()"
                                                 >Start</button>
                                                 
     <button class="btn" type="submit" v-else @click=" isTrue=!isTrue;             
-          translateCheck(tranclate,translateTrue);
-          pastCheck(removeEmptySpace(pastSimple), removeEmptySpace(pastSimpleTrue));
-          participleCheck(removeEmptySpace(partiziple), removeEmptySpace(partizipleTrue));
+          checkTranslate(tranclate,translateTrue);
+          checkPastSimple(pastSimple,pastSimpleTrue);
+          checkPastParticiple(partiziple,partizipleTrue);
                                         ">Check</button>    
     <hr>
      </form>      
