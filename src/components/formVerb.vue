@@ -3,11 +3,12 @@ import { ref } from "@vue/reactivity";
 import {useStoreVerbs} from '../stores/verbs';
 import {storeToRefs} from 'pinia';
 
+
 const storeVerbs = useStoreVerbs();
 const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
       checkPastParticiple, resetValue} = storeVerbs;
 
-
+      
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
        resultSimplePast, resultSimpleParticiple, name} = storeToRefs(storeVerbs)
 
