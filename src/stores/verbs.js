@@ -32,7 +32,8 @@ export const  useStoreVerbs = defineStore('storeId', {
   actions:{
 
     async getUser (){
-      const res = await fetch('https://jsonplaceholder.typicode.com/users/'+6);
+      const res = await fetch('https://jsonplaceholder.typicode.com/users/'+ 
+      (Math.floor(Math.random() * 10)+1));
       const user = await res.json();
       this.user = user.name;
     },
