@@ -39,10 +39,10 @@ function resetValueInput(){
     <form @submit.prevent="submit"> 
 
     <label for="tr" class="label"><strong>Translate:</strong></label> <br/>
-    <input required type="text" 
+    <input type="text" 
     class="input"
     placeholder="Введите перевод"    
-    v-model="tranclate">
+    v-model="tranclate" required>
     <p class="p" v-html="resultTranslate"></p>
     <br/>
 

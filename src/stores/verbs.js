@@ -22,13 +22,21 @@ export const  useStoreVerbs = defineStore('storeId', {
     numPoints: 0,
     resultMinus: `<p>Ваш ответ неверный</p><h2 style = "color: #d15a5a">-1</h2>`,
     resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>', 
-    name: 'Hi, Alex!',    
+    name: '',    
+    user: '',
     }
   },
   getters:{
 
   },
   actions:{
+
+    async getUser (){
+      const res = await fetch('https://jsonplaceholder.typicode.com/users/'+6);
+      const user = await res.json();
+      this.user = user.name;
+    },
+
     rendomNumFromVerbs (){
       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
         Object.keys(this.verbForms).length)]     
