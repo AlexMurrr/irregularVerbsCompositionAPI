@@ -6,17 +6,18 @@ import {storeToRefs} from 'pinia';
 
 const useStore =useStoreVerbs();
 
-const {getUser} = useStore;
+const {getUser, getTime} = useStore;
 
-getUser().name;
+getUser();
+getTime();
 
-const {user} = storeToRefs(useStore)
+const {user, time} = storeToRefs(useStore)
 
 </script>
     
 <template>
     <div class="nameHi">
-        <h2 class="header2">{{user}}</h2>
+        <h2 class="header2">HI {{time}}</h2>
     </div>
 
 </template>

@@ -24,6 +24,7 @@ export const  useStoreVerbs = defineStore('storeId', {
     resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>', 
     name: '',    
     user: '',
+    time: '',
     }
   },
   getters:{
@@ -36,6 +37,12 @@ export const  useStoreVerbs = defineStore('storeId', {
       (Math.floor(Math.random() * 10)+1));
       const user = await res.json();
       this.user = user.name;
+    },
+
+    async getTime (){
+      const res = await fetch('http://localhost:8080/result');
+      const time = await res.json();
+      this.time = time;
     },
 
     rendomNumFromVerbs (){
