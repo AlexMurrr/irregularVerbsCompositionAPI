@@ -18,3 +18,14 @@ app.get("/add", (req, res, next) => {
              console.log('Add successfull')   
   })
 })
+
+export const inserttUser = (result) =>{
+  db.query("INSERT INTO count (`name`, `countPoint`) VALUES (?, ?)",['E', 100],     (err, results)=>{
+    if(err) {
+        console.log(err);
+        result(err, null);
+    } else {
+        result(null, results);
+    }
+  })      
+}
