@@ -1,7 +1,7 @@
-import {inserttUser} from "../models/pointmodels"
+import {insertUser} from "../models/pointmodels"
 
 export const createuser = (req, res)=>{
-    inserttUser((err, results) => {
+    insertUser((err, results) => {
         if (err){
             res.send(err);
         }else{

@@ -12,15 +12,15 @@ app.get('/', (req, res) => {
 
 app.get("/add", (req, res, next) => {
     const insert =
-    "INSERT INTO count (`name`, `countPoint`) VALUES (?, ?);";
+    "INSERT INTO point.count (`name`, `countPoint`) VALUES (?, ?);";
     db.query(insert, ['E', 100],  (err, res)=>{
              if(err) console.log(err.message);
              console.log('Add successfull')   
   })
 })
 
-export const inserttUser = (result) =>{
-  db.query("INSERT INTO count (`name`, `countPoint`) VALUES (?, ?)",['E', 100],     (err, results)=>{
+export const insertUser = (result) =>{
+  db.query("INSERT INTO point.count (`name`, `countPoint`) VALUES (?, ?)",['E', 100],     (err, results)=>{
     if(err) {
         console.log(err);
         result(err, null);
