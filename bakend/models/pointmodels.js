@@ -1,7 +1,7 @@
 import db from "../config/db.js";
 
 export const insertUser = (result) =>{
-  db.query("SELECT point.count (`name`, `countPoint`) VALUES (?, ?)",['E', 100],     (err, results)=>{
+  db.query("UPDATE `point`.`count` SET `countPoint` = 13 WHERE (`name` = 'A')",     (err, results)=>{
     if(err) {
         console.log(err);
         result(err, null);
@@ -9,6 +9,17 @@ export const insertUser = (result) =>{
         result(null, results);
     }
   })      
+}
+
+export const getUsers = (result) => {
+   db.query("SELECT * FROM point.count", (err, results)=>{
+    if(err) {
+        console.log(err);
+        result(err, null);
+    } else {
+        result(null, results);
+    }
+   }); 
 }
 
 //import exspress from "exspress"
