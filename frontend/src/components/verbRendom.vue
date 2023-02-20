@@ -1,6 +1,6 @@
 <script setup>
 import {onBeforeMount} from 'vue'; 
-import h1V from './h1V.vue';
+import headerUse from './header.vue';
 import {useStoreVerbs} from '../stores/verbs';
 import {storeToRefs} from 'pinia';
 import {ref} from 'vue'
@@ -35,7 +35,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <h1V 
+  <header-use 
   :verb=rendArrFromVerbForms[0] 
   />
 
