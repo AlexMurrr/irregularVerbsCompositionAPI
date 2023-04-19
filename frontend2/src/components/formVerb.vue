@@ -35,7 +35,7 @@ function resetValueInput(){
     
 <template>
     <div>
-{{props.translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}}
+{{props.translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}} 
     <form @submit.prevent="submit"> 
 
     <label for="tr" class="label"><strong>Translate:</strong></label> <br/>

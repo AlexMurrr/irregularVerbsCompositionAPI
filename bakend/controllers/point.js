@@ -1,4 +1,4 @@
-import {insertUser, getUsers} from "../models/pointmodels.js"
+import {insertUser, getUsers, getAllVerbs} from "../models/pointmodels.js"
 
 export const createuser = (req, res)=>{
     insertUser((err, results) => {
@@ -14,8 +14,7 @@ export const showUsers = (req, res) => {
     getUsers((err, results) => {
         if(err){
             res.send(err)
-        }
-        else{
+        }else{
             res.json(results);
         }
     })

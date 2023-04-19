@@ -22,6 +22,17 @@ export const getUsers = (result) => {
    }); 
 }
 
+export const getAllVerbs = (result) => {
+  db.query("SELECT * FROM point.formsverbs", (err, results)=>{
+    if(err) {
+      console.log(err);
+      result(err, null);
+  } else {
+      result(null, results);
+  }
+  })
+}
+
 //import exspress from "exspress"
 // const app = express();
 // app.listen(5000, () => {

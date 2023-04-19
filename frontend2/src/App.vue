@@ -18,7 +18,8 @@
   text-align: center;
   color: #2c3e50;
   margin: 60px auto;
-  width: 800px;  
+  width: 800px; 
+  background-color: rgb(232, 232, 248); 
 }
 body{  
   background-color: rgb(243, 240, 240);
@@ -35,7 +36,4 @@ input {
 button{
   background-color: rgb(224, 231, 231);
 }
-
-
-
 </style>
