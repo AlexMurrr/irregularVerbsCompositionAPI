@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-//import { getVerbs } from '../../../bakend/controllers/verbs';
 
 export const  useStoreVerbs = defineStore('storeId', {
  
@@ -26,8 +25,8 @@ export const  useStoreVerbs = defineStore('storeId', {
     name: '',    
     user: '',
     time: '',
-    verbs: '',  
-    e: 'ee', 
+    verbs: '',
+    rendUser:'',         
     }
   },
   getters:{
@@ -42,17 +41,17 @@ export const  useStoreVerbs = defineStore('storeId', {
       this.user = user.name;
     },
 
-    async getTime (){
-      const res = await fetch('http://localhost:8080/result');
-      const time = await res.json();
-      this.time = time;
-    },
-
-    // async getAllVerbs () {
-    //   const res = await fetch('http://localhost:5000/allVers');
-    //   const verbs = await res.json();
-    //   this.verbs = verbs;
+    // async getRandomUser (){
+    //   const res = await fetch('http://localhost:5001/randomUser');
+    //   const randUser = await res.json();
+    //   this.randUser = randUser;
     // },
+
+      async getRandomUser () {
+      const res = await fetch('http://localhost:5001/user');
+      const verbs = await res.json();
+      this.rendUser = verbs[0].name;
+    },
 
     rendomNumFromVerbs (){
       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *

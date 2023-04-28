@@ -10,7 +10,7 @@ const {rendomNumFromVerbs, checkTranslate, checkPastSimple,
 
       
 const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
-       resultSimplePast, resultSimpleParticiple, name} = storeToRefs(storeVerbs)
+       resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -37,7 +37,6 @@ function resetValueInput(){
     <div>
 {{props.translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}} 
     <form @submit.prevent="submit"> 
-
     <label for="tr" class="label"><strong>Translate:</strong></label> <br/>
     <input type="text" 
     class="input"
@@ -70,11 +69,11 @@ function resetValueInput(){
     <button class="btn" type="submit" v-else @click=" isTrue=!isTrue;             
           checkTranslate(tranclate,translateTrue);
           checkPastSimple(pastSimple,pastSimpleTrue);
-          checkPastParticiple(partiziple,partizipleTrue);
+          checkPastParticiple(partiziple,partizipleTrue);        
                                         ">Check</button>    
     <hr>
      </form>      
-    </div>    
+    </div>       
 </template>
     
 <style scoped>
