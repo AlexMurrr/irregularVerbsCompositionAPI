@@ -8,6 +8,7 @@ export const storeCheckVerbs = defineStore('check', {
             resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>',
             resultTranslate: '', 
             resultSimplePast: '',
+            resultSimpleParticiple: '',
             numPoints: 0,
             rendVerbFromArrVerbForms:'e',
         }
@@ -46,26 +47,42 @@ export const storeCheckVerbs = defineStore('check', {
               }
             },
 
-            checkPastSimple(inputVerb, trueVerb){
+        checkPastSimple(inputVerb, trueVerb){
+              if(inputVerb===trueVerb || this.oneWordTrue(inputVerb, trueVerb)) {
+                this.pastSimpleStore = true;
+                this.resultSimplePast = this.resultPlus;
+                this.numPoints++;
+              } else {
+                this.pastSimpleStore = false;
+                this.resultSimplePast =`<p>Ваш ответ неверный, верный - 
+                                        <b><span style = "color: #55a34e; font-size: 120%">
+                                        ${this.rendVerbFromArrVerbForms} </p>
+                                        </span></b> </p>
+                                        <h2 style = "color: #d15a5a">-1</h2>`;
+                this.numPoints--;
+                }        
+            },
+
+            checkPastParticiple(inputVerb, trueVerb){
                 if(inputVerb===trueVerb || this.oneWordTrue(inputVerb, trueVerb)) {
-                  this.pastSimpleStore = true;
-                  this.resultSimplePast = this.resultPlus;
+                  this.pastParticipleStore = true;
+                  this.resultSimpleParticiple = this.resultPlus;
                   this.numPoints++;
                 } else {
-                  this.pastSimpleStore = false;
-                  this.resultSimplePast =`<p>Ваш ответ неверный, верный - 
-                                             <b><span style = "color: #55a34e; font-size: 120%">
-                                             ${this.rendVerbFromArrVerbForms} </p>
-                                             </span></b> </p>
-                                             <h2 style = "color: #d15a5a">-1</h2>`;
+                  this.pastParticipleStore = false;
+                  this.resultSimpleParticiple = `<p>Ваш ответ неверный, верный - 
+                                                 <b><span style = "color: #55a34e; font-size: 120%">
+                                                 ${this.rendVerbFromArrVerbForms} </p>
+                                                 </span></b> </p>
+                                                 <h2 style = "color: #d15a5a">-1</h2>`;
                   this.numPoints--;
-                }        
-              },
+                }
+              },    
 
             resetValue(){
               this.resultTranslate = '';
               this.resultSimplePast = '';
-             // this.resultSimpleParticiple = '';
+              this.resultSimpleParticiple = '';
             },
     }
 })
