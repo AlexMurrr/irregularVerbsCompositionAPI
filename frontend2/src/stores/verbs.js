@@ -19,7 +19,7 @@ export const  useStoreVerbs = defineStore('storeId', {
     resultTranslate: '',
     resultSimplePast: '',
     resultSimpleParticiple: '',
-    numPoints: 0,
+    //numPoints: 0,
     resultMinus: `<p>Ваш ответ неверный</p><h2 style = "color: #d15a5a">-1</h2>`,
     resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>', 
     name: '',    
@@ -95,13 +95,8 @@ export const  useStoreVerbs = defineStore('storeId', {
     //                                    <h2 style = "color: #d15a5a">-1</h2>`;
     //     this.numPoints--;
     //   }
-    //},       
-
-    resetValue(){
-      this.resultTranslate = '';
-      this.resultSimplePast = '';
-      this.resultSimpleParticiple = '';
-    },
+    //},    
+   
     removeEmptySpace(verb){
       return verb.replace(/\s/g,'');
     },

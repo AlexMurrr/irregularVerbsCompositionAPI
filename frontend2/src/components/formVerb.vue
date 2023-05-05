@@ -1,16 +1,20 @@
 <script setup>
 import { ref } from "@vue/reactivity";
 import {useStoreVerbs} from '../stores/verbs';
+import {storeCheckVerbs} from '../stores/checkVerbs'
 import {storeToRefs} from 'pinia';
 
 
 const storeVerbs = useStoreVerbs();
-const {rendomNumFromVerbs, checkTranslate, checkPastSimple, 
-      checkPastParticiple, resetValue} = storeVerbs;
+const useStoreCheckVerbs = storeCheckVerbs();
 
+const {rendomNumFromVerbs} = storeVerbs;
+const {checkTranslate, resetValue} = useStoreCheckVerbs;
       
-const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
-       resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
+// const {translateStore, pastSimpleStore, pastParticipleStore, resultTranslate,
+//        resultSimplePast, resultSimpleParticiple} = storeToRefs(storeVerbs)
+
+const {translateStore, resultTranslate} = storeToRefs(useStoreCheckVerbs);
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -50,7 +54,7 @@ function resetValueInput(){
     class="input"
     placeholder="Введите простое прошедшее" 
     v-model="pastSimple">
-    <p class="p" v-html="resultSimplePast"></p>
+    <!-- <p class="p" v-html="resultSimplePast"></p> -->
     <br/>
 
     <label for="tr" class="label"><strong> Simple Participle:</strong></label> <br/>
@@ -58,7 +62,7 @@ function resetValueInput(){
     class="input"
     placeholder="Введите простое причастие" 
     v-model="partiziple">
-    <p class="p" v-html="resultSimpleParticiple"></p>
+    <!-- <p class="p" v-html="resultSimpleParticiple"></p> -->
       <br/>
     <button class="btn" type="submit" v-if="isTrue" @click="isTrue=!isTrue,
                                                rendomNumFromVerbs(),
@@ -68,8 +72,8 @@ function resetValueInput(){
                                                 
     <button class="btn" type="submit" v-else @click=" isTrue=!isTrue;             
           checkTranslate(tranclate,translateTrue);
-          checkPastSimple(pastSimple,pastSimpleTrue);
-          checkPastParticiple(partiziple,partizipleTrue);        
+          // checkPastSimple(pastSimple,pastSimpleTrue);
+          // checkPastParticiple(partiziple,partizipleTrue);        
                                         ">Check</button>    
     <hr>
      </form>      

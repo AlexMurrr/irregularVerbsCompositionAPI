@@ -1,10 +1,10 @@
 <script setup>
-import {useStoreVerbs} from '../stores/verbs';
+import {storeCheckVerbs} from '../stores/checkVerbs';
 import {storeToRefs} from 'pinia';
 import { ref } from "@vue/reactivity";
 
-const storeVerbs = useStoreVerbs();
-const {numPoints} = storeToRefs(storeVerbs)
+const useStoreCheckVerbs = storeCheckVerbs();
+const {numPoints} = storeToRefs(useStoreCheckVerbs);
 
 </script>
     
