@@ -17,7 +17,8 @@ export const  useStoreVerbs = defineStore('storeId', {
     pastSimpleStore: '', 
     pastParticipleStore: '',      
     user: '',      
-    rendUser:'',         
+    rendUser:'',    
+    allVerbs: '',     
     }
   },
   getters:{
@@ -32,6 +33,11 @@ export const  useStoreVerbs = defineStore('storeId', {
       this.user = user.name;
     },    
 
+    async getVerbs (){
+      const res = await fetch('http://localhost:5001/verbs');
+      this.allVerbs = await res.json();
+    },
+
       async getRandomUser () {
       const res = await fetch('http://localhost:5001/user');
       const verbs = await res.json();
@@ -41,7 +47,8 @@ export const  useStoreVerbs = defineStore('storeId', {
     async rendomNumFromVerbs (){
       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
         Object.keys(this.verbForms).length)]     
-    },    
+    },     
+    
   }
 })
 

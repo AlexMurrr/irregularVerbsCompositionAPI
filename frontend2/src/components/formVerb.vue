@@ -3,15 +3,16 @@ import { ref } from "@vue/reactivity";
 import {useStoreVerbs} from '../stores/verbs';
 import {storeCheckVerbs} from '../stores/checkVerbs'
 import {storeToRefs} from 'pinia';
+import { DOMDirectiveTransforms } from "@vue/compiler-dom";
 
 
 const storeVerbs = useStoreVerbs();
 
 const useStoreCheckVerbs = storeCheckVerbs();
 
-const {rendomNumFromVerbs} = storeVerbs;
+const {rendomNumFromVerbs, getVerbs} = storeVerbs;
 
-const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
+const {rendArrFromVerbForms, allVerbs} = storeToRefs(storeVerbs);
 
 const {checkTranslate, checkPastSimple, checkPastParticiple, resetValue} = useStoreCheckVerbs;
 
@@ -42,11 +43,17 @@ async function getValueFormVerbs(){
   simpleParticipleTrueCheck.value = rendArrFromVerbForms.value[3];   
 }
 
+async function a(){
+  await getVerbs();
+  console.log(allVerbs.value);
+}
+
 async function callAsyncFun(){
   await rendomNumFromVerbs();
   await resetValue();
   await resetValueInput();
   await getValueFormVerbs();
+  await a();
 }
 
 </script>

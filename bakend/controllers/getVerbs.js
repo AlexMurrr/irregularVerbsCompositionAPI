@@ -1,4 +1,4 @@
-import {getAllVerbs} from "../models/verbs";
+import {getAllVerbs} from "../models/verbs.js";
 
 export const getVerbs = (req, res)=>{
     getAllVerbs((err, results) => {
