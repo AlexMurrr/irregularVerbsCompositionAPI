@@ -11,9 +11,11 @@ const useStoreCheckVerbs = storeCheckVerbs();
 
 const {rendomNumFromVerbs} = storeVerbs;
 
+const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
+
 const {checkTranslate, checkPastSimple, checkPastParticiple, resetValue} = useStoreCheckVerbs;
 
-const {resultTranslate, resultSimplePast, resultSimpleParticiple} = storeToRefs(useStoreCheckVerbs);
+const {resultTranslate, resultSimplePast, resultSimpleParticiple, translateTrueCheck} = storeToRefs(useStoreCheckVerbs);
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -28,17 +30,28 @@ const isInputEmpty = ref('');
 
 let isTrue = ref(false);
 
-function resetValueInput(){
+async function resetValueInput(){
   tranclate.value = '';
   pastSimple.value = '';
   partiziple.value = '';
+}
+
+async function getValueFormVerbs(){
+  translateTrueCheck.value = rendArrFromVerbForms.value[1];  
+}
+
+async function callAsyncFun(){
+  await rendomNumFromVerbs();
+  await resetValue();
+  await resetValueInput();
+  await getValueFormVerbs();
 }
 
 </script>
     
 <template>
     <div>
-{{props.translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}} 
+{{translateTrue}} {{props.pastSimpleTrue}} {{partizipleTrue}} 
     <form @submit.prevent="submit"> 
     <label for="tr" class="label"><strong>Translate:</strong></label> <br/>
     <input type="text" 
@@ -64,9 +77,8 @@ function resetValueInput(){
     <p class="p" v-html="resultSimpleParticiple"></p> 
       <br/>
     <button class="btn" type="submit" v-if="isTrue" @click="isTrue=!isTrue,
-                                               rendomNumFromVerbs(),
-                                                resetValue(),
-                                                resetValueInput()"
+                                             callAsyncFun()
+                                                "
                                                 >Start</button>
                                                 
     <button class="btn" type="submit" v-else @click=" isTrue=!isTrue;             

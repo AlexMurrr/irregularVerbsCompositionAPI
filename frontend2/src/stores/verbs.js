@@ -15,16 +15,8 @@ export const  useStoreVerbs = defineStore('storeId', {
     rendArrFromVerbForms: '',  
     translateStore: '', 
     pastSimpleStore: '', 
-    pastParticipleStore: '', 
-    resultTranslate: '',
-    resultSimplePast: '',
-    resultSimpleParticiple: '',    
-    resultMinus: `<p>Ваш ответ неверный</p><h2 style = "color: #d15a5a">-1</h2>`,
-    resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>', 
-    name: '',    
-    user: '',
-    time: '',
-    verbs: '',
+    pastParticipleStore: '',      
+    user: '',      
     rendUser:'',         
     }
   },
@@ -46,21 +38,10 @@ export const  useStoreVerbs = defineStore('storeId', {
       this.rendUser = verbs[0].name;
     },
 
-    rendomNumFromVerbs (){
+    async rendomNumFromVerbs (){
       this.rendArrFromVerbForms = this.verbForms[Math.floor(Math.random() *
         Object.keys(this.verbForms).length)]     
     },    
-   
-    removeEmptySpace(verb){
-      return verb.replace(/\s/g,'');
-    },
-   
-    oneWordTrue(inputVerb, trueVerb){     
-      const inputVerbs = this.removeEmptySpace(inputVerb);
-      const trueVerbs = this.removeEmptySpace(trueVerb);
-      const trueArr = trueVerbs.split(",");      
-      return trueArr.includes(inputVerbs);       
-    }
   }
 })
 
