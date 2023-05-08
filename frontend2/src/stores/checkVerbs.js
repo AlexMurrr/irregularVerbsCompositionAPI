@@ -13,6 +13,8 @@ export const storeCheckVerbs = defineStore('check', {
             numPoints: 0,
             rendVerbFromArrVerbForms:'e',
             translateTrueCheck: '',
+            simplePastTrueCheck: '',
+            simpleParticipleTrueCheck: '',
         }
     },
 
@@ -58,7 +60,7 @@ export const storeCheckVerbs = defineStore('check', {
                 this.pastSimpleStore = false;
                 this.resultSimplePast =`<p>Ваш ответ неверный, верный - 
                                         <b><span style = "color: #55a34e; font-size: 120%">
-                                        ${this.rendVerbFromArrVerbForms} </p>
+                                        ${this.simplePastTrueCheck} </p>
                                         </span></b> </p>
                                         <h2 style = "color: #d15a5a">-1</h2>`;
                 this.numPoints--;
@@ -74,7 +76,7 @@ export const storeCheckVerbs = defineStore('check', {
                   this.pastParticipleStore = false;
                   this.resultSimpleParticiple = `<p>Ваш ответ неверный, верный - 
                                                  <b><span style = "color: #55a34e; font-size: 120%">
-                                                 ${this.rendVerbFromArrVerbForms} </p>
+                                                 ${this.simpleParticipleTrueCheck} </p>
                                                  </span></b> </p>
                                                  <h2 style = "color: #d15a5a">-1</h2>`;
                   this.numPoints--;

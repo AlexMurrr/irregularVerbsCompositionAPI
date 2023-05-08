@@ -15,7 +15,7 @@ const {rendArrFromVerbForms} = storeToRefs(storeVerbs);
 
 const {checkTranslate, checkPastSimple, checkPastParticiple, resetValue} = useStoreCheckVerbs;
 
-const {resultTranslate, resultSimplePast, resultSimpleParticiple, translateTrueCheck} = storeToRefs(useStoreCheckVerbs);
+const {resultTranslate, resultSimplePast, resultSimpleParticiple, translateTrueCheck, simplePastTrueCheck, simpleParticipleTrueCheck} = storeToRefs(useStoreCheckVerbs);
 
 const props = defineProps({translateTrue: String,
                            pastSimpleTrue: String,
@@ -37,7 +37,9 @@ async function resetValueInput(){
 }
 
 async function getValueFormVerbs(){
-  translateTrueCheck.value = rendArrFromVerbForms.value[1];  
+  translateTrueCheck.value = rendArrFromVerbForms.value[1];
+  simplePastTrueCheck.value = rendArrFromVerbForms.value[2];
+  simpleParticipleTrueCheck.value = rendArrFromVerbForms.value[3];   
 }
 
 async function callAsyncFun(){
