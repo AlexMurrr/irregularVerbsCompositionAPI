@@ -23,8 +23,8 @@ async function getValueFormVerbs(){
 }
 
 async function callAsyncFun(){
- await rendomNumFromVerbs();
- await getValueFormVerbs();
+  await rendomNumFromVerbs();
+  await getValueFormVerbs();
 }
 
 function go (){

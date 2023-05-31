@@ -10,13 +10,13 @@ const {getRandomUser} = useStore;
 
 getRandomUser();
 
-const {rendUser} = storeToRefs(useStore)
+const {rendUser} = storeToRefs(useStore);
 
 </script>
     
 <template>
     <div class="nameHi">
-        <h3 class="header2">Hello,<br>  {{rendUser}} </h3>       
+        <h3 class="header2">Hello,<br> {{rendUser}} </h3>       
     </div>
 
 </template>

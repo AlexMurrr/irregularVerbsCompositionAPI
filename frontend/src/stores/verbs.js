@@ -12,6 +12,7 @@ export const  useStoreVerbs = defineStore('storeId', {
       4: ['bend', 'гнуть', 'bent', 'bent'],
       5: ['bet', 'держать пари', 'bet', 'bet']
     },
+    randVerb: '',
     rendArrFromVerbForms: '',  
     translateStore: '', 
     pastSimpleStore: '', 
@@ -38,7 +39,13 @@ export const  useStoreVerbs = defineStore('storeId', {
       this.allVerbs = await res.json();
     },
 
-      async getRandomUser () {
+    async getRandVerb (){
+      const res = await fetch('http://localhost:5001/randverb');
+      const arrRandVerb = await res.json();
+      this.randVerb = arrRandVerb[0].infinitive;
+    },
+
+    async getRandomUser () {
       const res = await fetch('http://localhost:5001/user');
       const verbs = await res.json();
       this.rendUser = verbs[0].name;

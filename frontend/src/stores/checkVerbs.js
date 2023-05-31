@@ -3,9 +3,9 @@ import {defineStore} from 'pinia'
 export const storeCheckVerbs = defineStore('check', {
     state:()=>{
         return {
-            translateStore: '',
-            pastSimpleStore: '',
-            pastParticipleStore: '',
+            translate: '',
+            pastSimple: '',
+            pastParticiple: '',
             resultPlus: '<p>Ваш ответ верный</p><h2 style = "color: #66d17e">+1</h2>',
             resultTranslate: '', 
             resultSimplePast: '',
