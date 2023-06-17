@@ -33,4 +33,7 @@ const props = defineProps({ verb: String });
 .hader {
   margin-right: 60px;
 }
+.point{
+  margin-top: 10px;
+}
 </style>

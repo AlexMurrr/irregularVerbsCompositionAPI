@@ -30,7 +30,7 @@ const { numPoints } = storeToRefs(useStoreCheckVerbs);
   height: 22px;
   border-radius: 50%;
   width: 100px;
-  height: 100px;
+  height: 90px;
   border: 5px;
   margin: 10px;
   display: flex;
