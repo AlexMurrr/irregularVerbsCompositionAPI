@@ -15,8 +15,8 @@ const props = defineProps({ verb: String });
       <h3>Введите для глагола: {{ props.verb }}</h3>
     </div>
 
-    <div>
-      <number-points class="point" />
+    <div class="point" >
+      <number-points/>
     </div>
   </div>
 </template>
@@ -26,6 +26,8 @@ const props = defineProps({ verb: String });
   display: flex;
 }
 .hi {
+  margin-top: 35px;
+  margin-left: 10px;
   width: 200px;
 }
 .hader {
