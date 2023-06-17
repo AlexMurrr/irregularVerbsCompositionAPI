@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "@vue/reactivity";
+import { ref } from "vue";
 import { useStoreVerbs } from "../stores/verbs";
 import { storeCheckVerbs } from "../stores/checkVerbs";
 import { storeToRefs } from "pinia";
@@ -70,47 +70,47 @@ async function callAsyncFun() {
     <form @submit.prevent="submit">
       <label class="label"><strong>Translate:</strong></label> <br />
       <input
+        v-model="tranclate"
         type="text"
         class="input"
         placeholder="Введите перевод"
-        v-model="tranclate"
         required
       />
       <p class="p" v-html="resultTranslate"></p>
 
       <label class="label"><strong>Simple Past:</strong></label> <br />
       <input
+        v-model="pastSimple"
         required
         type="text"
         class="input"
         placeholder="Введите простое прошедшее"
-        v-model="pastSimple"
       />
       <p class="p" v-html="resultSimplePast"></p>
 
       <label class="label"><strong> Simple Participle:</strong></label> <br />
       <input
+        v-model="partiziple"
         required
         type="text"
         class="input"
         placeholder="Введите простое причастие"
-        v-model="partiziple"
       />
       <p class="p" v-html="resultSimpleParticiple"></p>
 
       <button
+        v-if="isTrue"
         class="btn"
         type="submit"
-        v-if="isTrue"
         @click="(isTrue = !isTrue), callAsyncFun()"
       >
         Start
       </button>
 
       <button
+        v-else
         class="btn"
         type="submit"
-        v-else
         @click="
           isTrue = !isTrue;
           checkTranslate(tranclate, translateTrue);

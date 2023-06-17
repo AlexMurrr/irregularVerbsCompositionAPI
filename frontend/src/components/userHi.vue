@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "@vue/reactivity";
+import { ref } from "vue";
 import { useStoreVerbs } from "../stores/verbs";
 import { storeToRefs } from "pinia";
 

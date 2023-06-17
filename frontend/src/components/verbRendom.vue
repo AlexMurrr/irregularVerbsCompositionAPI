@@ -50,9 +50,9 @@ onBeforeMount(() => {
   <header-use :verb="rendArrFromVerbForms[0]" />
 
   <form-verb
-    :translateTrue="rendArrFromVerbForms[1]"
-    :pastSimpleTrue="rendArrFromVerbForms[2]"
-    :partizipleTrue="rendArrFromVerbForms[3]"
+    :translate-true="rendArrFromVerbForms[1]"
+    :past-simple-true="rendArrFromVerbForms[2]"
+    :partiziple-true="rendArrFromVerbForms[3]"
   />
   <start :time="time" />
 </template>
