@@ -50,12 +50,7 @@ async function getValueFormVerbs() {
   simpleParticipleTrueCheck.value = rendArrFromVerbForms.value[3];
 }
 
-async function a() {
-  await getRandVerb();
-  console.log(randVerb.value);
-}
-
-async function callAsyncFun() {
+async function callAsyncFunToStart() {
   await rendomNumFromVerbs();
   await resetValue();
   await resetValueInput();
@@ -102,7 +97,9 @@ async function callAsyncFun() {
         v-if="isTrue"
         class="btn"
         type="submit"
-        @click="(isTrue = !isTrue), callAsyncFun()"
+        @click="(isTrue = !isTrue),
+        callAsyncFunToStart()
+       "
       >
         Start
       </button>
@@ -111,12 +108,10 @@ async function callAsyncFun() {
         v-else
         class="btn"
         type="submit"
-        @click="
-          isTrue = !isTrue;
-          checkTranslate(tranclate, translateTrue);
-          checkPastSimple(pastSimple, pastSimpleTrue);
-          checkPastParticiple(partiziple, partizipleTrue);
-        "
+        @click="(isTrue = !isTrue),  
+        checkTranslate(tranclate, translateTrue);
+        checkPastSimple(pastSimple, pastSimpleTrue);
+        checkPastParticiple(partiziple, partizipleTrue);"
       >
         Check
       </button>
@@ -128,7 +123,7 @@ async function callAsyncFun() {
 <style scoped>
 .input {
   width: 450px;
-  margin: 15px auto;
+  margin: 20px auto;
 }
 .label {
   color: #17173f;
