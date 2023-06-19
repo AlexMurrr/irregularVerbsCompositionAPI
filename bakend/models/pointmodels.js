@@ -1,29 +1,29 @@
 import db from "../config/db.js";
 
-export const insertUser = (result) =>{
-  db.query("UPDATE `point`.`count` SET `countPoint` = 13 WHERE (`name` = 'A')",     (err, results)=>{
-    if(err) {
+export const insertUser = (result) => {
+  db.query(
+    "UPDATE `point`.`count` SET `countPoint` = 13 WHERE (`name` = 'A')",
+    (err, results) => {
+      if (err) {
         console.log(err);
         result(err, null);
-    } else {
+      } else {
         result(null, results);
+      }
     }
-  })      
-}
+  );
+};
 
 export const getUsers = (result) => {
-   db.query("SELECT * FROM point.count", (err, results)=>{
-    if(err) {
-        console.log(err);
-        result(err, null);
+  db.query("SELECT * FROM point.count", (err, results) => {
+    if (err) {
+      console.log(err);
+      result(err, null);
     } else {
-        result(null, results);
+      result(null, results);
     }
-   }); 
-}
-
-
-
+  });
+};
 
 //import exspress from "exspress"
 // const app = express();
@@ -40,6 +40,6 @@ export const getUsers = (result) => {
 //     "INSERT INTO point.count (`name`, `countPoint`) VALUES (?, ?);";
 //     db.query(insert, ['E', 100],  (err, res)=>{
 //              if(err) console.log(err.message);
-//              console.log('Add successfull')   
+//              console.log('Add successfull')
 //   })
 // })
