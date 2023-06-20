@@ -2,7 +2,8 @@
 import numberPoints from "./numberPoints.vue";
 import userHi from "./userHi.vue";
 
-const props = defineProps({ verb: String });
+const props = defineProps({ verb: {type:String, default: ''}});
+
 </script>
 
 <template>

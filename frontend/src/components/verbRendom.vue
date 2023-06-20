@@ -1,12 +1,12 @@
 <script setup>
 import { onBeforeMount } from "vue";
-import headerUse from "./header.vue";
+import headerUse from "./headerV.vue";
 import { useStoreVerbs } from "../stores/verbs";
 import { storeCheckVerbs } from "../stores/checkVerbs";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import formVerb from "./formVerb.vue";
-import start from "./start.vue";
+import start from "./startV.vue";
 
 const storeVerbs = useStoreVerbs();
 const { rendArrFromVerbForms } = storeToRefs(storeVerbs);

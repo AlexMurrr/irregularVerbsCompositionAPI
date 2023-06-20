@@ -57,9 +57,6 @@ async function callAsyncFunToStart() {
   await getValueFormVerbs();
 }
 
-// async function callAsyncFunToStart() {
-//   await checkTranslate(tranclate, translateTrue);
-// }
 </script>
 
 <template>
