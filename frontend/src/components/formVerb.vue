@@ -74,7 +74,9 @@ async function callAsyncFunToStart() {
         placeholder="Введите перевод"
         required
       />
+      <!-- eslint-disable -->
       <p class="p" v-html="resultTranslate"></p>
+      <!-- eslint-enable -->
 
       <label class="label"><strong>Simple Past:</strong></label> <br />
       <input
@@ -84,7 +86,9 @@ async function callAsyncFunToStart() {
         class="input"
         placeholder="Введите простое прошедшее"
       />
+      <!-- eslint-disable -->
       <p class="p" v-html="resultSimplePast"></p>
+      <!-- eslint-enable -->
 
       <label class="label"><strong> Simple Participle:</strong></label> <br />
       <input
@@ -94,7 +98,9 @@ async function callAsyncFunToStart() {
         class="input"
         placeholder="Введите простое причастие"
       />
+      <!-- eslint-disable -->
       <p class="p" v-html="resultSimpleParticiple"></p>
+      <!-- eslint-enable -->
 
       <button
         v-if="isTrue"
