@@ -55,5 +55,14 @@ export const useStoreVerbs = defineStore("storeId", {
           Math.floor(Math.random() * Object.keys(this.verbForms).length)
         ];
     },
+
+    async setMyPoint(){
+      const response= await fetch("http://localhost:5001/setPoint");
+      if (!response.ok) {
+        throw new Error('Ошибка при выполнении запроса');
+      }
+      const data = await response.json();
+      return data;
+    }
   },
 });

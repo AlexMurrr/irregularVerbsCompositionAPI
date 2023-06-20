@@ -8,9 +8,9 @@ const storeVerbs = useStoreVerbs();
 
 const useStoreCheckVerbs = storeCheckVerbs();
 
-const { rendomNumFromVerbs, getRandVerb } = storeVerbs;
+const { rendomNumFromVerbs} = storeVerbs;
 
-const { rendArrFromVerbForms, randVerb } = storeToRefs(storeVerbs);
+const { rendArrFromVerbForms} = storeToRefs(storeVerbs);
 
 const { checkTranslate, checkPastSimple, checkPastParticiple, resetValue } =
   useStoreCheckVerbs;
@@ -25,16 +25,16 @@ const {
 } = storeToRefs(useStoreCheckVerbs);
 
 const props = defineProps({
-  translateTrue: String,
-  pastSimpleTrue: String,
-  partizipleTrue: String,
+  translateTrue: {type: String, default: ''},
+  pastSimpleTrue: {type: String, default: ''},
+  partizipleTrue: {type: String, default: ''},
 });
 
 const tranclate = ref("");
 const pastSimple = ref("");
 const partiziple = ref("");
 
-const isInputEmpty = ref("");
+//const isInputEmpty = ref("");
 
 let isTrue = ref(false);
 
@@ -55,8 +55,11 @@ async function callAsyncFunToStart() {
   await resetValue();
   await resetValueInput();
   await getValueFormVerbs();
-  await a();
 }
+
+// async function callAsyncFunToStart() {
+//   await checkTranslate(tranclate, translateTrue);
+// }
 </script>
 
 <template>
@@ -97,9 +100,7 @@ async function callAsyncFunToStart() {
         v-if="isTrue"
         class="btn"
         type="submit"
-        @click="(isTrue = !isTrue),
-        callAsyncFunToStart()
-       "
+        @click="(isTrue = !isTrue), callAsyncFunToStart()"
       >
         Start
       </button>
@@ -108,13 +109,14 @@ async function callAsyncFunToStart() {
         v-else
         class="btn"
         type="submit"
-        @click="(isTrue = !isTrue),  
-        checkTranslate(tranclate, translateTrue);
-        checkPastSimple(pastSimple, pastSimpleTrue);
-        checkPastParticiple(partiziple, partizipleTrue);"
+        @click="
+          (isTrue = !isTrue), 
+          checkTranslate(tranclate, translateTrue);
+          checkPastSimple(pastSimple, pastSimpleTrue);
+          checkPastParticiple(partiziple, partizipleTrue);        "
       >
         Check
-      </button>
+      </button>      
       <hr />
     </form>
   </div>

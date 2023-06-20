@@ -32,7 +32,7 @@ export const storeCheckVerbs = defineStore("check", {
       return trueArr.includes(inputVerbs);
     },
 
-    checkTranslate(inputVerb, trueVerb) {
+    async checkTranslate(inputVerb, trueVerb) {
       if (inputVerb === trueVerb || this.oneWordTrue(inputVerb, trueVerb)) {
         this.translateStore = true;
         this.resultTranslate = this.resultPlus;
