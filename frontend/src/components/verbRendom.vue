@@ -28,7 +28,7 @@ async function callAsyncFun() {
 }
 
 function go() {
-  time.value += 1;
+  time.value += 1;  
   if (time.value === 4) {
     time.value = "Go!";
     callAsyncFun();

@@ -1,7 +1,6 @@
 <script setup>
 import { storeCheckVerbs } from "../stores/checkVerbs";
 import { storeToRefs } from "pinia";
-import { ref } from "vue";
 
 const useStoreCheckVerbs = storeCheckVerbs();
 const { numPoints } = storeToRefs(useStoreCheckVerbs);
