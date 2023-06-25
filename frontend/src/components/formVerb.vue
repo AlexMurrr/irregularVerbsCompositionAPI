@@ -38,8 +38,7 @@ const partiziple = ref("");
 //const isInputEmpty = ref("");
 
 let isTrue = ref(false);
-let isTrueBV = ref(true);
-function print (bool){ console.log(bool);}
+//let isTrueBV = ref(true);
 
 async function resetValueInput() {
   tranclate.value = "";
@@ -102,34 +101,29 @@ async function callAsyncFunToStart() {
       <p class="p" v-html="resultSimpleParticiple"></p>
       <!-- eslint-enable -->
 
-      <button
+      <buttonV
         v-if="isTrue"
         class="btn"
         type="submit"
+        label="Start"
         @click="(isTrue = !isTrue), callAsyncFunToStart()"
-      >
-        Start
-      </button>
+      />
+        <!-- Start
+      </button> -->
 
-      <button
+      <buttonV
         v-else
         class="btn"
         type="submit"
+        label="Check"
         @click="
           (isTrue = !isTrue), 
           checkTranslate(tranclate, translateTrue);
           checkPastSimple(pastSimple, pastSimpleTrue);
           checkPastParticiple(partiziple, partizipleTrue);"
-      >
-        Check
-      </button>      
-      <hr />
-      <buttonV v-if="isTrueBV" @click="print(isTrueBV), (isTrueBV=!isTrueBV)"  label="show"/>
-      <buttonV v-else @click="print(isTrueBV), (isTrueBV=!isTrueBV)" label="not"/>
+      />      
+      <hr />    
     </form>
-
-    
-
   </div>
 </template>
 
