@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useStoreVerbs } from "../stores/verbs";
 import { storeCheckVerbs } from "../stores/checkVerbs";
 import { storeToRefs } from "pinia";
+import  buttonV from "./buttonV.vue";
 
 const storeVerbs = useStoreVerbs();
 
@@ -37,6 +38,8 @@ const partiziple = ref("");
 //const isInputEmpty = ref("");
 
 let isTrue = ref(false);
+let isTrueBV = ref(true);
+function print (bool){ console.log(bool);}
 
 async function resetValueInput() {
   tranclate.value = "";
@@ -116,12 +119,17 @@ async function callAsyncFunToStart() {
           (isTrue = !isTrue), 
           checkTranslate(tranclate, translateTrue);
           checkPastSimple(pastSimple, pastSimpleTrue);
-          checkPastParticiple(partiziple, partizipleTrue);        "
+          checkPastParticiple(partiziple, partizipleTrue);"
       >
         Check
       </button>      
       <hr />
+      <buttonV v-if="isTrueBV" @click="print(isTrueBV), (isTrueBV=!isTrueBV)"  label="show"/>
+      <buttonV v-else @click="print(isTrueBV), (isTrueBV=!isTrueBV)" label="not"/>
     </form>
+
+    
+
   </div>
 </template>
 
