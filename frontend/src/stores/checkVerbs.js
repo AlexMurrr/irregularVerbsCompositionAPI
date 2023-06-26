@@ -39,7 +39,7 @@ export const storeCheckVerbs = defineStore("check", {
         this.numPoints++;
       } else {
         this.translateStore = false;
-        this.resultTranslate = `<p color = "green">Ваш ответ неверный, верный - 
+        this.resultTranslate = `<p>Ваш ответ неверный, верный - 
                                         <b><span style = "color: #55a34e; font-size: 120%">
                                         ${this.translateTrueCheck}
                                         </span></b> </p>
@@ -57,8 +57,8 @@ export const storeCheckVerbs = defineStore("check", {
         this.pastSimpleStore = false;
         this.resultSimplePast = `<p>Ваш ответ неверный, верный - 
                                         <b><span style = "color: #55a34e; font-size: 120%">
-                                        ${this.simplePastTrueCheck} </p>
-                                        </span></b> </p>
+                                        ${this.simplePastTrueCheck}
+                                        </span></b></p>
                                         <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
       }
@@ -73,7 +73,7 @@ export const storeCheckVerbs = defineStore("check", {
         this.pastParticipleStore = false;
         this.resultSimpleParticiple = `<p>Ваш ответ неверный, верный - 
                                                  <b><span style = "color: #55a34e; font-size: 120%">
-                                                 ${this.simpleParticipleTrueCheck} </p>
+                                                 ${this.simpleParticipleTrueCheck}
                                                  </span></b> </p>
                                                  <h2 style = "color: #d15a5a">-1</h2>`;
         this.numPoints--;
