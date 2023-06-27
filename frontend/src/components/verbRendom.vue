@@ -44,6 +44,7 @@ function myLoop() {
 onBeforeMount(() => {
   myLoop();
 });
+
 </script>
 
 <template>
@@ -54,7 +55,8 @@ onBeforeMount(() => {
     :past-simple-true="rendArrFromVerbForms[2]"
     :partiziple-true="rendArrFromVerbForms[3]"
   />
-  <start :time="time" />
+  <start :time="time"/>
+
 </template>
 
 <style></style>

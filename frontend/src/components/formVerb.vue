@@ -4,6 +4,7 @@ import { useStoreVerbs } from "../stores/verbs";
 import { storeCheckVerbs } from "../stores/checkVerbs";
 import { storeToRefs } from "pinia";
 import  buttonV from "./buttonV.vue";
+import inputV from "./inputV.vue"
 
 const storeVerbs = useStoreVerbs();
 
@@ -66,37 +67,37 @@ async function callAsyncFunToStart() {
   <div>
     <form @submit.prevent="submit">
       <label class="label"><strong>Translate:</strong></label> <br />
-      <input
-        v-model="tranclate"
-        type="text"
-        class="input"
-        placeholder="Введите перевод"
-        required
+
+      <inputV
+      v-model:value="tranclate"
+      placeholder="Введите перевод"
+      name='tranclate'
       />
+      
       <!-- eslint-disable -->
       <p v-html="resultTranslate"></p>
       <!-- eslint-enable -->
 
       <label class="label"><strong>Simple Past:</strong></label> <br />
-      <input
-        v-model="pastSimple"
-        required
-        type="text"
-        class="input"
-        placeholder="Введите простое прошедшее"
+
+      <inputV
+      v-model:value="pastSimple"
+      placeholder="Введите простое прошедшее"
+      name='pastSimple'
       />
+      
       <!-- eslint-disable -->
       <p v-html="resultSimplePast"></p>
       <!-- eslint-enable -->
 
       <label class="label"><strong> Simple Participle:</strong></label> <br/>
-      <input
-        v-model="partiziple"
-        required
-        type="text"
-        class="input"
-        placeholder="Введите простое причастие"
-      />
+
+      <inputV
+      v-model:value="partiziple"
+      placeholder="Введите простое причастие"
+      name='partiziple'
+      /> 
+            
       <!-- eslint-disable -->
       <p v-html="resultSimpleParticiple"></p>
       <!-- eslint-enable -->
@@ -126,10 +127,6 @@ async function callAsyncFunToStart() {
 </template>
 
 <style scoped>
-.input {
-  width: 450px;
-  margin: 20px auto;
-}
 .label {
   color: #17173f;
 }
