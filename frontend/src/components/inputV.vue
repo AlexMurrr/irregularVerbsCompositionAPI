@@ -3,16 +3,19 @@
     const props = defineProps({
         errorTranslate: {
             type: Array,
+            default: '',
             required: false
         },
 
         errorPastSimple: {
             type: Array,
+            default: '',
             required: false
         },
 
         errorPartiziple: {
             type: Array,
+            default: '',
             required: false
         },
 
@@ -51,21 +54,24 @@ const updateValue = (e) => {
       :placeholder=placeholder
       @input="updateValue"
       >
-    <div class="form-error"
-    v-for="element of errorTranslate"
+    <div
+v-for="element of errorTranslate"
     :key="element.$uid"
+    class="form-error"
     >
     <div class="errMessage">{{ element.$message }}</div>        
     </div>          
-    <div class="form-error"
-    v-for="element of errorPastSimple"
+    <div
+v-for="element of errorPastSimple"
     :key="element.$uid"
+    class="form-error"
     >
     <div class="errMessage">{{ element.$message }}</div>        
     </div>  
-    <div class="form-error"
-    v-for="element of errorPartiziple"
+    <div
+v-for="element of errorPartiziple"
     :key="element.$uid"
+    class="form-error"
     >
     <div class="errMessage">{{ element.$message }}</div>        
     </div>  

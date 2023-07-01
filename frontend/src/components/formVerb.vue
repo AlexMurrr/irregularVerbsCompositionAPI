@@ -86,7 +86,7 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
 
       <inputV
       v-model:value="validate.tranclate.$model"
-      :errorTranslate="validate.tranclate.$errors"
+      :error-translate="validate.tranclate.$errors"
       placeholder="Введите перевод"
       name='tranclate'
       />
@@ -99,7 +99,7 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
      
       <inputV     
       v-model:value="validate.pastSimple.$model"  
-      :errorPastSimple="validate.pastSimple.$errors"    
+      :error-past-simple="validate.pastSimple.$errors"    
       placeholder="Введите простое прошедшее"
       name='pastSimple'
       />
@@ -112,7 +112,7 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
 
       <inputV
       v-model:value="validate.partiziple.$model"
-      :errorPastSimple = "validate.partiziple.$errors"
+      :error-past-simple = "validate.partiziple.$errors"
       placeholder="Введите простое причастие"
       name='partiziple'
       /> 
