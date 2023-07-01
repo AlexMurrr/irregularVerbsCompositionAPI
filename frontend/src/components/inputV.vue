@@ -3,19 +3,19 @@
     const props = defineProps({
         errorTranslate: {
             type: Array,
-            default: '',
+            default: () => [],
             required: false
         },
 
         errorPastSimple: {
             type: Array,
-            default: '',
+            default: () => [],
             required: false
         },
 
         errorPartiziple: {
             type: Array,
-            default: '',
+            default: () => [],
             required: false
         },
 
