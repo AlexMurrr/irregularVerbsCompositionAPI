@@ -6,7 +6,7 @@ import { storeToRefs } from "pinia";
 import  buttonV from "./buttonV.vue";
 import inputV from "./inputV.vue";
 import useVuelidate from "@vuelidate/core";
-import {minLength} from "@vuelidate/validators";
+import {minLength, required} from "@vuelidate/validators";
 
 const storeVerbs = useStoreVerbs();
 
@@ -64,13 +64,16 @@ async function callAsyncFunToStart() {
 
 const rules = computed(()=>({
   tranclate: {
-    minLength: minLength(3)
+    minLength: minLength(3),  
+    required      
   },
   pastSimple: {
-    minLength: minLength(3)
+    minLength: minLength(3),
+    required
   },
   partiziple: {
-    minLength: minLength(3)
+    minLength: minLength(3),
+    required
   },
 }))
 
