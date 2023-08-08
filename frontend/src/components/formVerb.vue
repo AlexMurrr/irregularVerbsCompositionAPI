@@ -82,7 +82,7 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
 </script>
 
 <template>
-  {{ translateTrue }} {{ props.pastSimpleTrue }} {{ partizipleTrue }}
+ 
   <div>
     <form @submit.prevent="submit">
       <label class="label"><strong>Translate:</strong></label> <br />
@@ -92,12 +92,10 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
       :error-translate="validate.tranclate.$errors"
       placeholder="Введите перевод"
       name='tranclate'
-      />
-      
+      />      
       <!-- eslint-disable -->
       <p v-html="resultTranslate"></p>
       <!-- eslint-enable -->
-
       <label class="label"><strong>Simple Past:</strong></label> <br />
      
       <inputV     
@@ -146,6 +144,7 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
       <hr />    
     </form>
   </div>
+  {{ translateTrue }} {{ props.pastSimpleTrue }} {{ partizipleTrue }}
 </template>
 
 <style scoped>
