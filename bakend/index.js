@@ -12,6 +12,10 @@ app.use(cors());
 
 app.use(router);
 
+app.get('/eee', (req, res) => {
+       res.send('EEEE');
+   })
+
 app.get("/setPoint", (req, res, next) => {
   const update = "UPDATE mypoint SET point= 3 where id=1";
   db.query(update, 3);
