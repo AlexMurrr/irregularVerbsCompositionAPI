@@ -15,7 +15,7 @@ const { rendUser } = storeToRefs(useStore);
   <div class="nameHi">
     <h3 class="header2">
       Hello,<br />
-      {{ rendUser }}
+      Alex <!-- {{ rendUser }} -->
     </h3>
   </div>
 </template>

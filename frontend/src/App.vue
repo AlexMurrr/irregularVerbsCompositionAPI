@@ -17,7 +17,8 @@ import verbRendom from "./components/verbRendom.vue";
   color: #2c3e50;
   margin: 15px auto;
   width: 700px;
-  background-color: rgb(232, 232, 248);
+  background-color: rgb(218, 231, 240);
+  border-radius: 2%;
 }
 body {
   background-color: rgb(243, 240, 240);
