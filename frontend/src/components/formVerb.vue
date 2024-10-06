@@ -144,7 +144,7 @@ const validate = useVuelidate(rules, {tranclate, pastSimple, partiziple});
       <hr />    
     </form>
   </div>
-  {{ translateTrue }} {{ props.pastSimpleTrue }} {{ partizipleTrue }}
+  <!-- {{ translateTrue }} {{ props.pastSimpleTrue }} {{ partizipleTrue }} -->
 </template>
 
 <style scoped>

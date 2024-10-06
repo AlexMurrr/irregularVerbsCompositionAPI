@@ -12,7 +12,7 @@ const { numPoints } = storeToRefs(useStoreCheckVerbs);
       Points:
       <h2
         class="h1"
-        :class="{ true: true, green: true, red: numPoints < 0 }"
+        :class="{ green: numPoints > 0 , red: numPoints < 0 }"
       >
         {{ numPoints }}
       </h2>
